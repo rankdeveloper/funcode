@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Calculating area of triangle</h2>
+    <button onclick="areaOfTriangle()">Click</button>
+    <p id="demo"></p>
+
+    <script>
+
+        function areaOfTriangle(){
+            let s1=5 , s2=6 , s3=7;
+            let semi=(s1+s2+s3)/2;
+
+            let area=Math.sqrt(semi*(semi-s1)*(semi-s2)*(semi-s3));
+
+            document.getElementById("demo").innerHTML=`Area of 3 sides ${s1},${s2} ,${s3} triangle = ${area.toFixed(3)}`;
+        }
+    </script>
+</body>
+</html>

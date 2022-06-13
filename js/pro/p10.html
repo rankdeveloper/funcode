@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Program to find the greatest among three numbers.</h2>
+    <button onclick="myFunction(1,5,4)">Click</button>
+    <p id="demo"></p>
+
+    <script>
+        function myFunction(num1 , num2 , num3){
+            let result;
+
+            if(num1>num2 && num1>num3){
+                result=`${num1} is greatest among three num`;
+
+            }
+
+            else if(num2>num1 && num2>num3){
+                result=`${num2} is greatest among three num`;
+
+            }
+
+            else{
+
+                result=`${num3} is greatest among three num`;
+
+            }
+
+            document.getElementById("demo").innerHTML=`Given three number : ${num1} , ${num2} , ${num3} <br> ${result}`;
+
+
+
+
+            
+        }
+    </script>
+</body>
+</html>

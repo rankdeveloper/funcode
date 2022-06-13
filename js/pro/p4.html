@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Calculating days left until next Diwali</h2>
+    <button onclick="check()">Click</button>
+    <p id="demo"></p>
+
+    <script>
+        function check(){
+            var diwali, today, fiDiwali, diff, days;
+fiDiwali = [21,10]; // 22 oct
+today = new Date();
+
+
+fiDiwali = new Date(today.getFullYear(),fiDiwali[1]-1,fiDiwali[0]);
+if( today.getTime() > fiDiwali.getTime()) {
+    fiDiwali.setFullYear(fiDiwali.getFullYear()+1);
+}
+diff = fiDiwali.getTime()-today.getTime();
+days = Math.floor(diff/(1000*60*60*24));
+
+
+document.getElementById("demo").innerHTML=`${days} days until next  Diwali !`;
+        }
+       
+    </script>
+</body>
+</html>

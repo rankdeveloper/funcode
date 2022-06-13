@@ -1,0 +1,872 @@
+<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funCode - HTML</title>
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <style>
+
+        *{
+            padding:0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .list{
+            display: flex;
+    
+            padding:2rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ul-list , .ol-list{
+            background-color: white;
+            padding:1rem;
+        }
+
+        .test{
+    flex-direction: column;
+    padding:1rem;
+}
+
+.test .search input{
+    width: 100%;
+    padding-top:5px;
+    padding-left:10px;
+    padding-bottom: 5px;
+    outline: none;
+    border: none;
+    /* margin-bottom: 20px; */
+    border-radius: 10px;
+    color:#36b393 ;
+  
+}
+.test-inner{
+    display: flex;
+    justify-content:center;
+    gap:40px;
+    align-items: center;
+    margin-bottom:20px;
+    /* padding-top:20px; */
+    /* background-color: aqua; */
+    width: 100%;
+}
+
+
+.logo{
+    width:70px;
+    height: 70px;
+    object-fit: cover;
+    display: flex;
+}
+
+.test-inner .g-home button{
+    flex-direction: column;
+    /* padding:5px 20px; */
+    background-color:transparent;
+    color:white;
+    text-transform:uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    font-weight: normal;
+    border:none;
+    cursor:pointer;  
+}
+
+.g-home button a{
+            text-decoration: none;
+            color:white;
+            font-weight: bold;
+        }
+.test-inner .g-home button:hover{
+    text-decoration: underline; 
+}
+
+
+.logo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+span{
+    color:#36b393;
+}
+
+.output{
+    color:#36b393;
+}
+
+
+    </style>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+
+    <main id="main-doc">
+        <nav id="navbar">
+     
+            <header class="test">
+            <div class="test-inner">
+
+               
+                <div class="logo">
+                <img src="./html.png">
+                </div>
+              
+                <div class="g-home">
+                    <button><a href="../index.html">Go home</a></button>
+                </div>
+
+               
+            </div>
+            <div class="search">
+                <input type="text" id="searchbar" placeholder="Enter to search..." onkeyup="search()">
+            </div>
+            </header>
+            <ul>
+                <li><a class="nav-link i1" onclick="openResources(event,'First_section')" id="defaultOpen">Introduction</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event,'Second_section')">HTML Basic</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event,'Third_section')">HTML Elements</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event,'Fourth_section')">HTML Attributes</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event,'Fifth_section')">Heading</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event,'Sixth_section')">Paragraph</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event,'Seventh_section')">Formatting</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event, 'Eighth_section')">List</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event, 'Nineth_section')">Tables</a></li>
+
+            </ul>
+
+
+        </nav>
+        <div class="content">
+       
+            <section id="First_section" class="main-section">
+                <header>HTML Introduction</header><br>
+                    <code>What is HTML?</code>
+                    <div class="border">
+                    
+                <ul>
+                    <li>HTML stands for Hyper Text Markup Language</li>
+                    <li>HTML is the standard markup language for creating Web pages</li>
+                    <li>HTML describes the structure of a Web page</li>
+                    <li>HTML consists of a series of elements</li>
+                    <li>HTML elements tell the browser how to display the content</li>
+                    <li>HTML elements label pieces of content such as "this is a heading", "this is a paragraph", 
+                        "this is a link", etc.</li>
+                </ul>
+            
+                <h2>A Simple HTML Document</h2>
+                <h3 class="title">Example</h3>
+                <div class="example">
+
+        <pre>
+    &lt;!DOCTYPE html&gt;  
+    &lt;html&gt;
+          
+        &lt;head&gt;
+        &lt;title&gt;I am title&lt;/title&gt;
+        &lt;/head&gt;
+          
+        &lt;h2&gt;I am heading&lt;/h2&gt;
+        &lt;p&gt;This is parragraph&lt;/p&gt; 
+           
+    &lt;/html&gt;
+            
+            </pre>
+        </pre>
+
+                </div>
+
+            </div>
+
+
+            </section>
+
+
+            <section id="Second_section" class="main-section">
+                <header>HTML Basic Example</header>
+                <p>
+                    <code>HTML Documents</code>
+                    <div class="border">
+
+                    All HTML documents must start with a document type declaration:
+                    <span>&lt;!DOCTYPE html&gt;</span>
+
+                    The HTML document itself begins with <span>&lt;html&gt;</span> and ends with
+
+                    <span>&lt;/html&gt;</span>.
+
+                    The visible part of the HTML document is between
+
+                    <span>&lt;body&gt;</span> and <span>&lt;/body&gt;</span>.
+
+                </p>
+
+
+
+                <h2 class="title">Example</h2>
+                <!-- <button onclick="output2()">Output</button>
+                <button onclick="code2()">Code</button> -->
+
+                <div class="example" id="code2">
+
+                    <pre>
+
+&lt;!DOCTYPE html&gt;     
+&lt;html&gt;
+                  
+&lt;h2&gt;I am heading&lt;/h2&gt;
+&lt;p&gt;This is parragraph&lt;/p&gt; 
+                   
+&lt;/html&gt;
+                </pre>
+
+                </div>
+
+
+                <div class="example output"  id="output2">
+              
+                                
+                                    </div>
+
+
+
+                <!-- <header>HTML Basic Example</header> -->
+                <p>
+                <h2><code>HTML Documents</code></h2>
+
+                HTML headings are defined with the <span>&lt;h1&gt; </span> to <span>&lt;h6&gt; </span> tags.
+
+                <span>&lt;h1&gt; </span> defines the most important heading.
+                <span>&lt;h6&gt; </span> defines the least important heading:
+
+                </p>
+
+
+                <h2 class="title">Example</h2>
+                <div class="example">
+
+        <pre>
+    &lt;h1&gt;I am heading&lt;/h1&gt;
+    &lt;h2&gt;I am heading&lt;/h2&gt;
+    &lt;h3&gt;I am heading&lt;/h3&gt;
+        </pre>
+
+                </div>
+
+               
+
+
+                <p>
+                    <h2><code>HTML Paragraphs</code></h2>
+    
+                    HTML paragraphs are defined with the  <span>&lt;p&gt; </span> tag:
+                    </p>
+
+                    <h2 class="title">Example</h2>
+                <div class="example">
+
+        <pre>
+    &lt;p&gt;I am paragraph&lt;/p&gt;
+    &lt;p&gt;I am another paragraph&lt;/p&gt;
+        </pre>
+
+                </div>
+
+
+                <p>
+                    <h2><code>HTML Links</code></h2>
+    
+                    HTML links are defined with the <span>&lt;a&gt; </span> tag:
+                    </p>
+
+                    <p>The link's destination is specified in
+                         the <span>href</span> attribute. 
+
+                        Attributes are used to provide additional 
+                        information about HTML elements.</p>
+
+                    <h2 class="title">Example</h2>
+                <div class="example">
+
+        <pre>
+&lt;a href="https://google.com/"&gt;link&lt;/a&gt;
+        </pre>
+
+                </div>
+
+
+                <p>
+                    <h2><code>HTML Images</code></h2>
+    
+                    HTML images are defined with the <span>&lt;img&gt; </span> tag.
+
+                    The source file <span>src</span>, alternative
+                     text <span>alt</span>, <span>width</span>, and <span>height</span> are provided as attributes:
+                    </p>
+
+                    <h2 class="title">Example</h2>
+                <div class="example">
+
+        <pre>
+&lt;img src="img-url.jpg" 
+alt="img1" width="50%" height="30%"&gt;
+        </pre>
+
+                </div>
+
+            </div>
+
+
+            </section>
+
+
+            <section id="Third_section" class="main-section">
+                <header>HTML Elements</header>
+                <div class="border">
+                <p>
+                    <!-- <code>Third section paragraph</code> -->
+                    An HTML element is defined by a start tag,
+                     some content, and an end tag.The HTML element is everything
+                     from the start tag to the end tag:
+                    </p>
+                    <p>
+                     <span>&lt;tagname&gt;</span> Content goes here...&lt;/tagname&gt;
+                    </p>
+            
+                    <h2 class="title">Examples of some HTML elements:</h2>
+                    <div class="example">
+                        <pre>
+        &lt;h2&gt;I am heading&lt;/h2&gt;
+        &lt;p&gt;This is parragraph&lt;/p&gt;   
+                        </pre>
+                    </div>
+
+                </div>
+              
+               
+            </section>
+
+            <section id="Fourth_section" class="main-section">
+                <header>HTML Attributes</header>
+                <div class="border">
+                    <code>HTML Attributes</code>
+                
+    
+                <ul>
+                    <li>All HTML elements can have <span>attributes</span></li>
+                    <li>Attributes provide <span>additional information</span> about elements</li>
+                    <li>Attributes are always specified in the <span>start tag</span></li>
+                    <li>Attributes usually come in name/value pairs like: <span>name="value"</span></li>
+                </ul>
+                
+                <div class="href">
+                    <h2>The href Attribute</h2>
+                    <p>
+                    The   <span>&lt;a&gt;</span>  tag defines a hyperlink. The href attribute specifies the URL of the page the link goes to:</p>
+
+
+                    <h2 class="title">Example</h2>
+                    <div class="example">
+
+            <pre>
+        &lt;a href="https://google.com/"&gt;link&lt;/a&gt;
+            </pre>            
+
+                    </div>
+                </div>
+
+                <div class="src">
+                    <h2>The src Attribute</h2>
+                    <p>The <span>&lt;img&gt;</span> tag is used to embed an image in an HTML page. The src attribute specifies
+                         the path to the image to be displayed:</p>
+
+                         <h2 class="title">Example</h2>
+                         <div class="example">
+
+            <pre>
+            &lt;img src="img-url.jpg"&gt;
+            </pre>           
+                         </div>
+
+                <p>There are two ways to specify the URL in the src attribute:</p>
+                <p><strong>Absolute URL</strong> - Links to an external image that is hosted on another website. 
+                    Example: src="https://www.w3schools.com/images/img_girl.jpg".</p>
+
+
+                <p><strong>Relative URL</strong> - Links to an image that is hosted within the website. Here, the URL does not include the domain name. If the URL begins without a slash, it will be relative to the current page. Example: src="img_girl.jpg". If the URL begins with a slash, it will be relative to the domain.
+                     Example: src="/images/img_girl.jpg"</p>
+
+                <p><strong>Tip:</strong>It is almost always best to use relative URLs.
+                     They will not break if you change domain.</p>   
+                </div>
+               
+
+            <div class="alt">
+                <h2>The alt Attribute</h2>
+                <p>The required <span>alt</span> attribute for the   <span>&lt;img&gt;</span>  tag specifies an alternate text for an image,
+                     if the image for some reason cannot be displayed. This can be due to slow connection, or an error in the <span>src</span> attribute,
+                     or if the user uses a screen reader.</p>
+
+                     <h2 class="title">Example</h2>
+                     <div class="example">
+
+
+    <pre>
+    &lt;img src="logo.jpg"alt="logo"&gt;
+    </pre>
+                     </div>
+            </div>
+
+            <div class="w-h-attri">
+                <h2>The width and height Attributes</h2>
+                <p>The <span>&lt;img&gt;</span> tag should also contain the <span>width</span> and <span>height</span> attributes, which specifies
+                     the width and height of the image (in pixels):</p>
+
+                     <h2 class="title">Example</h2>
+                     <div class="example">
+        <pre>
+        &lt;img src="flower.jpg" 
+         width="400px" height="200px"&gt;
+        </pre>
+                     </div>
+            </div>
+
+
+            <div class="style">
+                <h2>The style Attribute</h2>
+                <p>The <span>style</span> attribute is used to add styles to an element,
+                     such as color, font, size, and more.</p>
+                     <h2 class="title">Example</h2>
+                     <div class="example">
+            <pre>
+        &lt;p style="color:red;"&gt;Styling text&lt;/p&gt;
+            </pre>
+                     </div>
+            </div>
+
+        </div>
+
+            </section>
+
+
+            <section id="Fifth_section" class="main-section">
+                <header>Headings</header>
+
+                <div class="border">
+                <p>
+                    HTML headings are defined with the <span>&lt;h1&gt;</span> to <span>&lt;h6&gt;</span> tags.
+
+                    <span>&lt;h1&gt;</span> defines the most important heading. <span>&lt;h6&gt;</span> defines the least important heading
+                </p>
+
+                <h2 class="title">Example</h2>
+                <div class="example">
+
+        <pre>
+    &lt;h1&gt;I am heading 1&lt;/h1&gt;
+    &lt;h2&gt;I am heading 2&lt;/h2&gt;
+    &lt;h3&gt;I am heading 3&lt;/h3&gt;
+    &lt;h4&gt;I am heading 2&lt;/h4&gt;
+    &lt;h5&gt;I am heading 1&lt;/h5&gt;
+    &lt;h6&gt;I am heading 2&lt;/h6&gt;
+        </pre>
+
+                </div>
+              
+            </div>
+            </section>
+
+            <section id="Sixth_section" class="main-section">
+                <header>Paragraphs</header>
+                <div class="border">
+                <p>
+                    The HTML <span>&lt;p&gt;</span> element defines a paragraph.
+
+                        A paragraph always starts on a new line, and browsers automatically 
+                        add some white space (a margin) before and after a paragraph.
+
+                <h2 class="title">Example</h2>
+                <div class="example">
+
+        <pre>
+    &lt;p&gt;I am paragraph&lt;/p&gt;
+    &lt;p&gt;I am another paragraph&lt;/p&gt;
+    &lt;p&gt;Lorem Ipsum is simply dummy text of<br> the printing and typesetting industry.&lt;/p&gt;
+    
+        </pre>
+
+                </div>
+              
+            </div>
+            </section>
+
+
+            <section id="Seventh_section" class="main-section">
+                <header>Formatting Elements</header>
+                <div class="border">
+                <p>
+                    Formatting elements were designed to display special types of text:</p>
+
+                    <ul>
+                        <li><span>&lt;b&gt;</span> - Bold text</li>
+                        <li><span>&lt;strong&gt;</span> - Important text</li>
+                        <li><span>&lt;i&gt;</span> - Italic text</li>
+                        <li><span>&lt;em&gt;</span> - Emphasized text</li>
+                        <li><span>&lt;mark&gt;</span> - Marked text</li>
+                        <li><span>&lt;small&gt;</span> - Smaller text</li>
+                        <li><span>&lt;del&gt;</span> - Deleted text</li>
+                        <li><span>&lt;ins&gt;</span> - Inserted text</li>
+                        <li><span>&lt;sub&gt;</span> - Subscript text</li>
+                        <li><span>&lt;sup&gt;</span> - Supscript text</li>
+
+                    </ul>
+
+                <h2 class="title">Example</h2>
+                <div class="example">
+
+        <pre>
+
+&lt;b&gt;This text is bold&lt;/b&gt;<br>
+&lt;strong&gt;This text is important!&lt;/strong&gt;<br>
+&lt;i&gt;This text is italic&lt;/i&gt;<br>
+&lt;em&gt;This text is emphasized&lt;/em&gt;<br>
+&lt;small&gt;This is some smaller text&lt;/small&gt;<br>
+&lt;p&gt;Do not forget to buy &lt;mark&gt;milk&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;My favorite color is&lt;del&gt;blue&lt;/del&gt; red&lt;/p&gt;
+&lt;p&gt;
+My favorite color is&lt;del&gt;blue&lt;/del&gt; &lt;ins&gt;red&lt;/ins&gt;
+&lt;/p&gt;
+&lt;p&gt;This is &lt;sub&gt;subscripted&lt;/sub&gt; text&lt;/p&gt;
+&lt;p&gt;This is &lt;sup&gt;supscripted&lt;/sup&gt; text&lt;/p&gt;
+
+        </pre>
+
+                </div>
+            </div>
+               
+            </section>
+
+
+
+            <section id="Eighth_section" class="main-section">
+                <header>List</header>
+                <div class="border">
+                <p>HTML lists allow web developers to group a set of related items in lists</p>
+
+                <div class="list">
+
+                    <div class="ul-list">
+                        <p>An unordered HTML list:</p>
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                            <li>Item 5</li>
+
+                        </ul>
+                    </div>
+
+                    <div class="ol-list">
+                        <p>An ordered HTML list:</p>
+                        <ol>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                            <li>Item 5</li>
+
+                        </ol>
+                    </div>
+
+                </div>
+
+
+                <div class="ul-list-content">
+                    <h2>Unordered HTML List</h2>
+                    <p>An unordered list starts with the <span>&lt;ul&gt;</span> tag.
+                    Each list item starts with the <span>&lt;li&gt;</span> tag.
+                    The list items will be marked with bullets (small black circles) by default:</p>
+                <h2 class="title">Example</h2>
+                <div class="example">
+
+        <pre>
+            &lt;ul&gt;
+
+            &lt;li&gt;Item 1&lt;/li&gt;
+            &lt;li&gt;Item 2&lt;/li&gt;
+            &lt;li&gt;Item 3&lt;/li&gt;
+            
+            &lt;/ul&gt;
+    
+        </pre>
+
+                </div>
+
+                </div>
+
+
+                <div class="ol-list-content">
+                    <h2>Ordered HTML List</h2>
+                    <p>An ordered list starts with the <span>&lt;ol&gt;</span> tag. Each list item 
+                    starts with the <span>&lt;li&gt;</span> tag.
+
+                The list items will be marked with numbers by default:</p>
+                <h2 class="title">Example</h2>
+                <div class="example">
+
+        <pre>
+            &lt;ol&gt;
+
+            &lt;li&gt;Item 1&lt;/li&gt;
+            &lt;li&gt;Item 2&lt;/li&gt;
+            &lt;li&gt;Item 3&lt;/li&gt;
+            
+            &lt;/ol&gt;
+    
+        </pre>
+
+                </div>
+
+                </div>
+
+                
+            </div>
+               
+            </section>
+
+            <section id="Nineth_section" class="main-section">
+                <header>Tables</header>
+                <div class="border">
+                <p>
+                    HTML tables allow web developers to arrange data into rows and columns.</p>
+
+
+                    <h3>Define an HTML Table</h3>
+                    <p>A table in HTML consists of table cells inside rows and columns</p>
+
+                <h2 class="title">Example</h2>
+                <div class="example">
+
+        <pre>
+    &lt;table border="1"&gt;
+
+        &lt;tr&gt;
+            &lt;th&gt;Company&lt;/th&gt;
+            &lt;th&gt;Contact&lt;/th&gt;
+            &lt;th&gt;Country&lt;/th&gt;
+        &lt;/tr&gt;
+            
+        &lt;tr&gt;
+            &lt;td&gt;India&lt;/td&gt;
+            &lt;td&gt;England&lt;/td&gt;
+            &lt;td&gt;Australia&lt;/td&gt;
+        &lt;/tr&gt;
+            
+        &lt;tr&gt;
+            &lt;td&gt;New Zealand&lt;/td&gt;
+            &lt;td&gt;Canada&lt;/td&gt;
+            &lt;td&gt;Japan&lt;/td&gt;
+        &lt;/tr&gt;
+            
+    &lt;/table&gt;
+    
+        </pre>
+
+                </div>
+
+                <div class="table-cells">
+                    <h3>Table Cells</h3>
+                    <p>Each table cell is defined by a <span>&lt;td&gt;</span> 
+                    and a <span>&lt;/td&gt;</span> tag , <span>td</span> stands for table data. </p>
+                    
+                    <p>Everything between <span>&lt;td&gt;</span> and <span>&lt;/td&gt;</span> are the content of the table cell.</p>
+
+                    <h2 class="title">Example</h2>
+                    <div class="example">
+        <pre>
+    &lt;table&gt;
+
+        &lt;tr&gt;              
+            &lt;td&gt;New Zealand&lt;/td&gt;
+            &lt;td&gt;Canada&lt;/td&gt;
+            &lt;td&gt;Japan&lt;/td&gt;
+        &lt;/tr&gt;<br>
+    
+    &lt;/table&gt;    
+                        </pre>
+                    </div>
+
+                    <p><strong>Note - </strong> table data elements are the data containers of the table.
+                        They can contain all sorts of HTML elements; text, images,
+                         lists, other tables, etc.</p>
+
+                </div>
+
+
+                <div class="table-rows">
+                    <h3>Table rows</h3>
+                    <p>Each table row starts with a <span>&lt;tr&gt;</span> and end with a <span>&lt;/tr&gt;</span> tag. , <span>tr</span> stands for table row. </p>
+                    
+                    <p>Everything between <span>&lt;td&gt;</span> and <span>&lt;/td&gt;</span> are the content of the table cell.</p>
+
+                    <h2 class="title">Example</h2>
+                    <div class="example">
+        <pre>
+    &lt;table&gt;
+
+        &lt;tr&gt;              
+            &lt;td&gt;Apple&lt;/td&gt;
+            &lt;td&gt;Banana&lt;/td&gt;
+            &lt;td&gt;Grape&lt;/td&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;              
+            &lt;td&gt;Cherry&lt;/td&gt;
+            &lt;td&gt;Kiwi&lt;/td&gt;
+            &lt;td&gt;Orange&lt;/td&gt;
+    &lt;/tr&gt;
+
+    
+    &lt;/table&gt;    
+                        </pre>
+                    </div>
+
+                    <p><strong>Note - </strong> You can have as many rows as you like in a table,
+                         just make sure that the number of cells are the same in each row.
+                         There are times where a row can have less or more cells than another.</p>
+
+                </div>
+
+
+                <div class="table-headers">
+                    <h3>Table Headers</h3>
+                    <p>Sometimes you want your cells to be headers,
+                     in those cases use the <span>&lt;th&gt;</span> tag instead of the <span>&lt;td&gt;</span> tag:</p>
+                    
+            
+
+                    <h2 class="title">Example</h2>
+                    <div class="example">
+        <pre>
+    &lt;table&gt;
+
+        &lt;tr&gt;              
+            &lt;th&gt;Person 1&lt;/td&gt;
+            &lt;th&gt;Person 2&lt;/td&gt;
+            &lt;th&gt;Person 3&lt;/td&gt;
+        &lt;/tr&gt;
+
+
+        &lt;tr&gt;              
+            &lt;td&gt;Jimmy&lt;/td&gt;
+            &lt;td&gt;Miller&lt;/td&gt;
+            &lt;td&gt;David&lt;/td&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;              
+            &lt;td&gt;16&lt;/td&gt;
+            &lt;td&gt;10&lt;/td&gt;
+            &lt;td&gt;14&lt;/td&gt;
+        &lt;/tr&gt;
+    
+    &lt;/table&gt;    
+                        </pre>
+                    </div>
+
+                    <p>By default, the text in <span>&lt;th&gt;</span>
+                         elements are bold and centered, but you can change that with CSS.</p>
+
+                </div>
+              
+            </div>
+            </section> 
+
+
+        </div>
+
+    </main>
+
+
+     <!-- footer -->
+   <div class="footer">
+    <div class="footer-inner">
+        <div class="owner">
+
+            <h4> Designed & Coded by <a href="https://github.com/rankdeveloper">Rankush</a></h4>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/ranshu.0/" target="_blank"> <img src="../images/insta.jpg"></a>
+            <a href="https://www.linkedin.com/in/rankush-280430200/" target="_blank"><img
+                    src="../images/linkdlin.png"></a>
+            <a href="https://github.com/rankdeveloper" target="_blank"><img src="../images/github.png"></a>
+            <a href="mailto:iamrankush@gmail.com" target="_blank"><img src="../images/email.png"></a>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<!-- footer end -->
+
+    <script src="script.js"></script>
+    <script>
+
+        function output2(){
+
+document.getElementById('code2').style.display="none";
+
+fetch('./pro/p2.html')
+.then(response => response.text())
+.then(text => document.getElementById("output2").innerHTML=text)
+
+        }
+
+        function code2(){
+
+document.getElementById('output2').style.display="none";
+document.getElementById('code2').style.display="block";
+
+        }
+
+
+        
+
+function search(){
+    
+    var searchbar=document.getElementById("searchbar").value;
+    
+    searchbar=searchbar.toLowerCase();
+    // var active=document.getElementsByClassName('active');
+    
+    var x=document.getElementsByClassName("i1");
+    
+    for(var i=0; i<x.length; i++){
+        
+        if(!x[i].innerHTML.toLowerCase().match(searchbar)){
+            x[i].style.display="none";
+            x[i].classList.add('active');
+        }
+        
+        else{
+            x[i].style.display="block";
+        }
+    }
+}
+    </script>
+
+</body>
+
+</html>

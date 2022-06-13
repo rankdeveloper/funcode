@@ -1,0 +1,685 @@
+<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funCode - JS</title>
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .list {
+            display: flex;
+
+            padding: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ul-list,
+        .ol-list {
+            background-color: white;
+            padding: 1rem;
+        }
+
+        .test {
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        .test .search input {
+            width: 100%;
+            padding-top: 5px;
+            padding-left: 10px;
+            padding-bottom: 5px;
+            outline: none;
+            border: none;
+            /* margin-bottom: 20px; */
+            border-radius: 10px;
+            color: #36b393;
+
+        }
+
+        .test-inner {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            display: flex;
+        }
+
+        .test-inner .g-home button {
+            flex-direction: column;
+            background-color: transparent;
+            color: white;
+            text-transform: uppercase;
+            font-family: Arial, Helvetica, sans-serif;
+            outline: none;
+            font-weight: normal;
+            border: none;
+            cursor: pointer;
+        }
+        .g-home button a{
+            text-decoration: none;
+            color:white;
+            font-weight: bold;
+        }
+
+        .test-inner .g-home button:hover {
+            text-decoration: underline;
+        }
+
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        span {
+            color: #36b393;
+        }
+
+        .output {
+            color: #36B393;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-bottom: 2rem;
+
+        }
+
+        code p {
+            padding: 0 1rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+    </style>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+
+    <main id="main-doc">
+        <nav id="navbar">
+
+            <header class="test">
+                <div class="test-inner">
+
+
+                    <div class="logo">
+                        <img src="./js.png">
+                    </div>
+
+                    <div class="g-home">
+                        <button><a href="../index.html">Go home</a></button>
+                    </div>
+
+
+                </div>
+                <div class="search">
+                    <input type="text" id="searchbar" placeholder="Enter to search..." onkeyup="search()">
+                </div>
+<!-- 
+                <div class="js-icon">
+                    <img src="./output/js.png"alt="js">
+                </div> -->
+            </header>
+            <ul>
+                <li><a class="nav-link i1" onclick="openResources(event,'First_section')"
+                        id="defaultOpen">1 Program</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event,'Second_section')">2 Program</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event,'Third_section')">3 Program</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event,'Fourth_section')">4 Program</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event,'Fifth_section')">5 Program</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event,'Sixth_section')">6 Program</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event,'Seventh_section')">7 Program</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event, 'Eighth_section')">8 Program</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event, 'Nineth_section')">9 Program</a></li>
+                <li><a class="nav-link i1" onclick="openResources(event, 'Tenth_section')">10 Program</a></li>
+
+            </ul>
+
+
+        </nav>
+        <div class="content">
+
+            <section id="First_section" class="main-section">
+                <header>Program 1</header><br>
+               
+                <div class="border">
+                    <code><p>Write a JavaScript function to convert the temperature value from Celsius to Fahrenheit.
+                        Assume that the temperature value is 100</p></code>
+
+
+
+                    <div class="buttons">
+                        <button onclick="output1()">Output</button>
+                        <button onclick="code1()">Code</button>
+                    </div>
+
+                    <div class="output">
+                        <div class="output" id="text1">
+
+                        </div>
+
+                        <div class="output-img">
+                            <img class="output" style="width:500px; max-width:100%; display: none;" src="./output/1.png"
+                                alt="1" id="1">
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </section>
+
+
+
+            <section id="Second_section" class="main-section">
+                <header>Program 2</header><br>
+                <code><p>Find the area of a triangle where 
+                        lengths of the three of its sides are 5, 6, 7</p></code>
+                <div class="border">
+
+
+
+                    <div class="buttons">
+                        <button onclick="output2()">Output</button>
+                        <button onclick="code2()">Code</button>
+                    </div>
+
+                    <div class="output">
+                        <div class="output" id="text2">
+
+                        </div>
+
+                        <div class="output-img">
+                            <img class="output" style="width:500px; max-width:100%; display: none;" src="./output/2.png"
+                                alt="2" id="2">
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+            <section id="Third_section" class="main-section">
+                <header>Program 3</header><br>
+                <code><p>Check whether a given year is a leap year
+                         in the Gregorian calendar</p></code>
+                <div class="border">
+
+
+
+                    <div class="buttons">
+                        <button onclick="output3()">Output</button>
+                        <button onclick="code3()">Code</button>
+                    </div>
+
+                    <div class="output">
+                        <div class="output" id="text3">
+
+                        </div>
+
+                        <div class="output-img">
+                            <img class="output" style="width:500px; max-width:100%; display: none;" src="./output/3.png"
+                                alt="3" id="3">
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- program 4 -->
+
+            <section id="Fourth_section" class="main-section">
+                <header>Program 4</header><br>
+                <code><p>Write a JavaScript program to calculate days left 
+                    until next Diwali.</p></code>
+                <div class="border">
+
+
+
+                    <div class="buttons">
+                        <button onclick="output4()">Output</button>
+                        <button onclick="code4()">Code</button>
+                    </div>
+
+                    <div class="output">
+                        <div class="output" id="text4">
+
+                        </div>
+
+                        <div class="output-img">
+                            <img class="output" style="width:500px; max-width:100%; display: none;" src="./output/4.png"
+                                alt="4" id="4">
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- program 5 -->
+
+            <section id="Fifth_section" class="main-section">
+                <header>Program 5</header><br>
+                <code><p>Write a JavaScript program to get the website
+                     URL (loading page).</p></code>
+                <div class="border">
+
+
+
+                    <div class="buttons">
+                        <button onclick="output5()">Output</button>
+                        <button onclick="code5()">Code</button>
+                    </div>
+
+                    <div class="output">
+                        <div class="output" id="text5">
+
+                        </div>
+
+                        <div class="output-img">
+                            <img class="output" style="width:500px; max-width:100%; display: none;" src="./output/5.png"
+                                alt="5" id="5">
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- program 6 -->
+
+            <section id="Sixth_section" class="main-section">
+                <header>Program 6</header><br>
+                <code><p>Write a JavaScript program to compute the sum of the two given integers. If the two values are same,
+                     then returns triple their sum.</p></code>
+                <div class="border">
+
+
+
+                    <div class="buttons">
+                        <button onclick="output6()">Output</button>
+                        <button onclick="code6()">Code</button>
+                    </div>
+
+                    <div class="output">
+                        <div class="output" id="text6">
+
+                        </div>
+
+                        <div class="output-img">
+                            <img class="output" style="width:500px; max-width:100%; display: none;" src="./output/6.png"
+                                alt="6" id="6">
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- program 7 -->
+            <section id="Seventh_section" class="main-section">
+                <header>Program 7</header><br>
+                <code><p>Check whether a given positive number is a
+                     multiple of 3 or a multiple of 7</p></code>
+                <div class="border">
+
+
+
+                    <div class="buttons">
+                        <button onclick="output7()">Output</button>
+                        <button onclick="code7()">Code</button>
+                    </div>
+
+                    <div class="output">
+                        <div class="output" id="text7">
+
+                        </div>
+
+                        <div class="output-img">
+                            <img class="output" style="width:500px; max-width:100%; display: none;" src="./output/7.png"
+                                alt="7" id="7">
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- program 8 -->
+
+            <section id="Eighth_section" class="main-section">
+                <header>Program 8</header><br>
+                <code><p>Write the JavaScript code to enter the month number and 
+                    display respective month name and days</p></code>
+                <div class="border">
+
+
+
+                    <div class="buttons">
+                        <button onclick="output8()">Output</button>
+                        <button onclick="code8()">Code</button>
+                    </div>
+
+                    <div class="output">
+                        <div class="output" id="text8">
+
+                        </div>
+
+                        <div class="output-img">
+                            <img class="output" style="width:500px; max-width:100%; display: none;" src="./output/8.png"
+                                alt="8" id="8">
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+<!-- program 9 -->
+
+<section id="Nineth_section" class="main-section">
+    <header>Program 9</header><br>
+    <code><p>Write a program to check for vowel characters, spaces and
+         consonantants using switch statement.</p></code>
+    <div class="border">
+
+
+
+        <div class="buttons">
+            <button onclick="output9()">Output</button>
+            <button onclick="code9()">Code</button>
+        </div>
+
+        <div class="output">
+            <div class="output" id="text9">
+
+            </div>
+
+            <div class="output-img">
+                <img class="output" style="width:500px; max-width:100%; display: none;" src="./output/9.png"
+                    alt="9" id="9">
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- program 10 -->
+<section id="Tenth_section" class="main-section">
+    <header>Program 10</header><br>
+    <code><p>Write a program to check for vowel characters, spaces and
+         consonantants using switch statement.</p></code>
+    <div class="border">
+
+
+
+        <div class="buttons">
+            <button onclick="output10()">Output</button>
+            <button onclick="code10()">Code</button>
+        </div>
+
+        <div class="output">
+            <div class="output" id="text10">
+
+            </div>
+
+            <div class="output-img">
+                <img class="output" style="width:500px; max-width:100%; display: none;" src="./output/10.png"
+                    alt="10" id="10">
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+        </div>
+
+    </main>
+
+
+     <!-- footer -->
+   <div class="footer">
+    <div class="footer-inner">
+        <div class="owner">
+
+            <h4> Designed & Coded by <a href="https://github.com/rankdeveloper">Rankush</a></h4>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/ranshu.0/" target="_blank"> <img src="../images/insta.jpg"></a>
+            <a href="https://www.linkedin.com/in/rankush-280430200/" target="_blank"><img
+                    src="../images/linkdlin.png"></a>
+            <a href="https://github.com/rankdeveloper" target="_blank"><img src="../images/github.png"></a>
+            <a href="mailto:iamrankush@gmail.com" target="_blank"><img src="../images/email.png"></a>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<!-- footer end -->
+
+    <script src="script.js"></script>
+    <script>
+
+        function code1() {
+            document.getElementById("text1").style.padding="10px";
+            document.getElementById("1").style.display = "none";
+            fetch('./pro/p1.html')
+                .then(response => response.text())
+                .then(text => document.getElementById("text1").innerText = text)
+        }
+
+        function output1() {
+
+            document.getElementById("1").style.display = "block";
+            document.getElementById("text1").style.backgroundColor = "#1d1f1d";
+            document.getElementById("text1").innerText = "";
+            document.getElementById("1").style.padding="10px";
+        }
+
+        function code2() {
+            document.getElementById("text2").style.padding="10px";
+            document.getElementById("2").style.display = "none";
+            fetch('./pro/p2.html')
+                .then(response => response.text())
+                .then(text => document.getElementById("text2").innerText = text)
+        }
+
+        function output2() {
+            document.getElementById("2").style.padding="10px";
+            document.getElementById("2").style.display = "block";
+            document.getElementById("text2").style.backgroundColor = "#1d1f1d";
+            document.getElementById("text2").innerText = "";
+        }
+
+        function code3() {
+            document.getElementById("text3").style.padding="10px";
+            document.getElementById("3").style.display = "none";
+            fetch('./pro/p3.html')
+                .then(response => response.text())
+                .then(text => document.getElementById("text3").innerText = text)
+        }
+
+        function output3() {
+            document.getElementById("3").style.padding="10px";
+            document.getElementById("3").style.display = "block";
+            document.getElementById("text3").style.backgroundColor = "#1d1f1d";
+            document.getElementById("text3").innerText = "";
+        }
+
+
+        function code4() {
+            document.getElementById("text4").style.padding="10px";
+            document.getElementById("4").style.display = "none";
+            fetch('./pro/p4.html')
+                .then(response => response.text())
+                .then(text => document.getElementById("text4").innerText = text)
+        }
+
+        function output4() {
+            document.getElementById("4").style.padding="10px";
+            document.getElementById("4").style.display = "block";
+            document.getElementById("text4").style.backgroundColor = "#1d1f1d";
+            document.getElementById("text4").innerText = "";
+        }
+
+
+        //program 5
+        function code5() {
+            document.getElementById("text5").style.padding="10px";
+            document.getElementById("5").style.display = "none";
+            fetch('./pro/p5.html')
+                .then(response => response.text())
+                .then(text => document.getElementById("text5").innerText = text)
+        }
+
+        function output5() {
+            document.getElementById("5").style.padding="10px";
+            document.getElementById("5").style.display = "block";
+            document.getElementById("text5").style.backgroundColor = "#1d1f1d";
+            document.getElementById("text5").innerText = "";
+        }
+
+
+        // program 6
+        function code6() {
+            document.getElementById("text6").style.padding="10px";
+            document.getElementById("6").style.display = "none";
+            fetch('./pro/p6.html')
+                .then(response => response.text())
+                .then(text => document.getElementById("text6").innerText = text)
+        }
+
+        function output6() {
+            document.getElementById("6").style.padding="10px";
+            document.getElementById("6").style.display = "block";
+            document.getElementById("text6").style.backgroundColor = "#1d1f1d";
+            document.getElementById("text6").innerText = "";
+        }
+
+
+        // program 7
+        function code7() {
+            document.getElementById("text7").style.padding="10px";
+            document.getElementById("7").style.display = "none";
+            fetch('./pro/p7.html')
+                .then(response => response.text())
+                .then(text => document.getElementById("text7").innerText = text)
+        }
+
+        function output7() {
+            document.getElementById("7").style.padding="10px";
+            document.getElementById("7").style.display = "block";
+            document.getElementById("text7").style.backgroundColor = "#1d1f1d";
+            document.getElementById("text7").innerText = "";
+        }
+
+        // program 8
+        function code8() {
+            document.getElementById("text8").style.padding="10px";
+            document.getElementById("8").style.display = "none";
+            fetch('./pro/p8.html')
+                .then(response => response.text())
+                .then(text => document.getElementById("text8").innerText = text)
+        }
+
+        function output8() {
+            document.getElementById("8").style.padding="10px";
+            document.getElementById("8").style.display = "block";
+            document.getElementById("text8").style.backgroundColor = "#1d1f1d";
+            document.getElementById("text8").innerText = "";
+        }
+
+        // program 9
+        function code9() {
+            document.getElementById("text9").style.padding="10px";
+            document.getElementById("9").style.display = "none";
+            fetch('./pro/p9.html')
+                .then(response => response.text())
+                .then(text => document.getElementById("text9").innerText = text)
+        }
+
+        function output9() {
+            document.getElementById("9").style.padding="10px";
+            document.getElementById("9").style.display = "block";
+            document.getElementById("text9").style.backgroundColor = "#1d1f1d";
+            document.getElementById("text9").innerText = "";
+        }
+
+        //program 10
+        function code10() {
+            document.getElementById("text10").style.padding="10px";
+            document.getElementById("10").style.display = "none";
+            fetch('./pro/p10.html')
+                .then(response => response.text())
+                .then(text => document.getElementById("text10").innerText = text)
+        }
+
+        function output10() {
+            document.getElementById("10").style.padding="10px";
+            document.getElementById("10").style.display = "block";
+            document.getElementById("text10").style.backgroundColor = "#1d1f1d";
+            document.getElementById("text10").innerText = "";
+        }
+
+
+        function search() {
+
+            var searchbar = document.getElementById("searchbar").value;
+
+            searchbar = searchbar.toLowerCase();
+            // var active=document.getElementsByClassName('active');
+
+            var x = document.getElementsByClassName("i1");
+
+            for (var i = 0; i < x.length; i++) {
+
+                if (!x[i].innerHTML.toLowerCase().includes(searchbar)) {
+                    x[i].style.display = "none";
+                    x[i].classList.add('active');
+                }
+
+                else {
+                    x[i].style.display = "block";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
