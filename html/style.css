@@ -100,7 +100,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .main-section header {
-
   font-size: 30px;
   padding-top: 30px;
 }
@@ -112,7 +111,7 @@ body::-webkit-scrollbar-thumb {
 
 .main-section .border {
   border-left: 5px solid #36B393;
-  border-right: 5px solid #36B393;
+  /* border-right: 5px solid #36B393; */
   padding: 0 1rem;
   padding-left: 2rem;
 }
@@ -179,7 +178,6 @@ h1 {
   align-items:center ;
   width:80%;
   gap:40px;
-  
 }
 
 
@@ -315,6 +313,8 @@ h1 {
     text-align: right;
     padding: 1.5rem;
   }
+
+
 }
 
 
@@ -322,5 +322,21 @@ h1 {
   .content{
     margin-top: 10rem;
   }
+  .main-section header {
+    margin-top:20px;
+    text-align: center;
+  }
+
+  .footer-inner{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items:center ;
+    gap:15px;
+  }
+  .footer-inner .owner h4{
+    /* margin-bottom:10px; */
+  }
+ 
   
 }

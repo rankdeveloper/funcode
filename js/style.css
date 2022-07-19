@@ -76,7 +76,6 @@ body::-webkit-scrollbar-thumb {
 /*================= Main Content ==================*/
 .content {
   margin: 0 20px 20px;
-
 }
 
 .main-section {
@@ -86,7 +85,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .main-section header {
-
   font-size: 30px;
   padding-top: 30px;
 }
@@ -98,7 +96,7 @@ body::-webkit-scrollbar-thumb {
 
 .main-section .border {
   border-left: 5px solid #36B393;
-  border-right: 5px solid #36B393;
+  /* border-right: 5px solid #36B393; */
   padding: 0 1rem;
   /* padding-left: 2rem; */
 }
@@ -118,10 +116,7 @@ section header p {
   margin-top: 1rem;
   background-color: red;
 }
-/* section header code{
-  /* margin-bottom:1rem; */
-  /* background-color: pink;
-}  */
+
 
 h2,
 h1 {
@@ -132,7 +127,6 @@ h1 {
 }
 
 .main-section p {
-   /* color:white; */
   font-weight: normal;
 }
 
@@ -141,7 +135,6 @@ h1 {
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #1d1f1d;
-  /* padding: 10px; */
   margin-bottom: 2rem;
 }
 
@@ -173,8 +166,7 @@ h1 {
   justify-content: center;
   align-items: center;
   background-color: #1d1f1d;
-  height: 15vh;
-  
+  height: 15vh; 
 }
 
 .footer-inner{
@@ -183,9 +175,7 @@ h1 {
   align-items:center ;
   width:80%;
   gap:40px;
-  
 }
-
 
 .footer-inner .owner h4{
   color:#36B393;
@@ -197,7 +187,6 @@ h1 {
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
-
 
 .owner h4 a{
   text-decoration:none;
@@ -211,21 +200,12 @@ h1 {
 }
 
 .social-links{
-  /* margin-left:2rem; */
- 
   display: flex;
   justify-content: center;
   align-items: center;
  
 }
 
-
-/* .social-links .social-icon{
-  margin-right:5px;
-  padding:.5rem;
-  border-radius:50%;
-  border:1px solid white;
-} */
 
 .social-links a{
   border-radius:50%;
@@ -269,9 +249,6 @@ h1 {
 @media(min-width: 900px) {
   #main-doc {
     flex-direction: row;
- 
-    /* background-color: #000; */
-
   }
 
   #navbar {
@@ -284,13 +261,7 @@ h1 {
     padding: 0;
   }
 
-  /* .divider {
-      width: 100%;
-      margin: 0;
-      min-height: 100px;
-      background-color: #3700B3
-    }
-     */
+
   #navbar header,
   #navbar ul {
     padding-left: 40px;
@@ -329,6 +300,19 @@ h1 {
 @media screen and (max-width:480px) {
   .content{
     margin-top: 10rem;
+  }
+
+  .footer-inner{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center ;
+    width:100%;
+    gap:15px;
+  }
+
+  .main-section header {
+    margin-top:20px;
   }
   
 }
