@@ -1,0 +1,1986 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./side-bar_content.css">
+    
+     
+</head>
+
+<body>
+<div class="main">
+    <div class="sidebar">
+        <div class="flex">
+           
+               <h1>SQL</h1>
+
+          
+            <h5><a href="../index.html">Go home</a></h5>
+        </div>
+        <div class="searchbar">
+            <input type="text" onkeyup="search()" id="search" placeholder="Enter to search">
+        </div>
+
+        <div class="topics">
+            <ul id="topic">
+                <li><a href="#intro" class="item">Introduction</a></li>
+                <li><a href="#sqldo" class="item">what sql can do</a></li>
+                <li><a href="#syntax" class="item">Syntax rules</a></li>
+                <li><a href="#create-db" class="item">create database</a></li>
+                <li><a href="#use" class="item">use statement</a></li>
+                <li><a href="#create-table" class="item">create table</a></li>
+                <li><a href="#insert" class="item">insert into</a></li>
+                <li><a href="#select" class="item">select</a></li>
+                <li><a href="#update" class="item">update</a></li>
+                <li><a href="#delete" class="item">delete</a></li>
+                <li><a href="#alter" class="item">alter</a></li>
+                <li><a href="#order_by" class="item">order by clause</a></li>
+                <li><a href="#group_by" class="item">group by clause</a></li>
+                <li><a href="#like" class="item">like operator</a></li>
+                <li><a href="#union" class="item">union operator</a></li>
+                <li><a href="#subquery" class="item">subquery</a></li>
+                <li><a href="#having" class="item">having clause</a></li>
+                <li><a href="#exists" class="item">exists</a></li>
+                <li><a href="#joins" class="item">joins</a></li>
+                <li><a href="#constrait" class="item">constraints</a></li>
+                <li><a href="#views" class="item">views</a></li>
+                <li><a href="#grant_revoke" class="item">grant and revoke</a></li>
+                <li><a href="#char_func" class="item">character functions</a></li>
+                <li><a href="#date_func" class="item">date functions</a></li>
+                <li><a href="#group_func" class="item">group functions</a></li>
+
+            </ul>
+
+        </div>
+       
+
+
+    </div>
+
+    <div class="main-content">
+        <!-- <a href="#bottom">Bottom</a> -->
+        <!--   introduction to sql -->
+        <div class="one" >
+            <h2 id="intro">Introduction to SQL</h2>
+            <hr>
+            <p>SQL (Structured Query Language) is a
+                computer-based structured, formatted database
+                language designed for managing data in
+                Relational Database Management Systems
+                (RDBMS). SQL is a standardized computer
+                language that was initially developed by IBM for
+                querying, altering, and defining relational
+                databases using declarative statements.</p>
+            <ul>
+                <li> IBM initially developed SQL in the 1970s</li>
+                <li>SQL is pronounced as "sequel".</li>
+                <li> SQL is a computer language for storing,
+                    manipulating, and retrieving data in a
+                    relational database.</li>
+                <li> SQL allows you to create, modify and query
+                    databases.</li>
+                <li> SQL is a standard language that is used by
+                    most relational databases.</li>
+                <li> SQL is used to access and manipulate data
+                    stored in tables.</li>
+                <li> SQL is used to join multiple tables, create
+                    views, stored procedures, and triggers.</li>
+                <li> SQL is used to create and manage the
+                    schema of the database.</li>
+                <li> SQL can be used to control access to the
+                    data and manage the transaction.</li>
+                <li> SQL is used to create reports and data
+                    visualizations.</li>
+                <li> SQL is used for data validation and data
+                    integrity.</li>
+                <li> SQL is used for data security and backup,
+                    and recovery.</li>
+                <li> SQL is used for performance tuning and
+                    optimization.</li>
+                <li> SQL is used for troubleshooting and
+                    monitoring the database performance.</li>
+            </ul>
+        </div>
+        <!--   end introduction to sql -->
+    
+        <!--   what sql can do -->
+        <div class="one" id="sqldo">
+            <h2>what can sql do</h2>
+            <hr>
+            <p>SQL (Structured Query Language) can perform a
+                wide range of operations on a relational
+                database. Some of the main things that SQL can
+                do include:</p>
+            <div class="sql-commands-main" id="sqlCommands">
+                <div class="sql-commands">
+                    <h5>SELECT</h5>
+                    <p>Retrieve specific data from one or more tables.</p>
+                </div>
+    
+            </div>
+            <p><b>Note : </b>These are just a few examples of the many
+                operations that can be performed using SQL,
+                and the specific set of commands and
+                functionality may vary depending on the specific
+                relational database management system
+                (RDBMS) being used.</p>
+        </div>
+        <!--   end sql can do -->
+    
+        <!--   sql syntax rules -->
+        <div class="one" id="syntax">
+            <h2>SQL Syntax rules</h2>
+            <hr>
+            <p>SQL syntax has a set of rules that must be followed for a SQL statement to be valid. Here are some of the
+                most important rules to keep in mind when writing SQL statements:</p>
+            <ul>
+                <li>SQL statements always start with the keywords </li>
+                <li>SQL is a case insensitve language. For example, SELECT, select both are same. </li>
+    
+                <li>SQL statements must end with a semicolon (;). </li>
+                <li>Table and column names should be one word; if multiple words are used, they should be separated by an
+                    underscore (_) or camelCase.
+                    String values must be enclosed in single quotes (' ').</li>
+    
+                <li>Date values must be enclosed in single quotes (' ') and should be in the format 'YYYY-MM-DD'.</li>
+                <li>SQL Numeric values should not be enclosed in quotes. </li>
+    
+                <li>Each clause in a SQL statement should be written on a separate line for better readability. </li>
+                <li>The SELECT clause must come first in a SELECT statement, followed by the FROM clause and other clauses
+                    such as WHERE, JOIN, GROUP BY, and ORDER BY. </li>
+    
+                <li>When using the WHERE clause to filter results, the comparison operator must be placed between the column
+                    name and the value being compared. </li>
+    
+                <li>When joining tables, the ON clause should specify the relationship between the columns of the two
+                    tables.</li>
+    
+            </ul>
+            <p><b>Keep in mind</b> that SQL dialects may vary slightly depending on your specific database management
+                system.</p>
+        </div>
+        <!--   end sql syntax rules -->
+    <br><br>
+        <h2>SQL COMMANDS</h2>
+        <hr><br><br>
+        <div class="one" id="create-db">
+            <H2>create database</h2>
+            <hr>
+            <p>It is used to create database</p>
+    
+            <h4>Syntax:</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">create database</span> &lt;databaseName&gt;;</p>
+            </div>
+            <h4>Example:</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">create database</span> practice;</p>
+            </div>
+        </div>
+    
+        <div class="one" id="use">
+    
+            <h2>use statement</h2>
+            <hr>
+            <p>USE Statement is used to select a database and perform SQL operations into that database</p>
+            <h4>Syntax:</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">use </span> &lt;databaseName&gt;;</p>
+            </div>
+            <h4>Example:</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">use </span> practice;</p>
+            </div>
+        </div>
+        <!--   create table -->
+        <div class="one" id="create-table">
+            <h2>create table statement</h2>
+            <hr>
+            <p>The CREATE TABLE statement is used to create a new table in a database.</p>
+            <h4>Syntax:</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">create table</span> &lt;tableName&gt; (<br>columnName1 <span class="reserved">data
+                        type</span> ,<br> columnName2 <span class="reserved">data type</span> ,<br>columnName3 <span
+                        class="reserved">data type , ....</span> );</p>
+            </div>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">create table</span> employee(<br>id <span class="reserved">int</span> ,<br> name
+                    <span class="reserved">text</span> ,<br>age <span class="reserved">int</span> );</p>
+            </div>
+        </div>
+        <!--   create table end -->
+    
+        <!--   insert into -->
+        <div class="one" id="insert">
+            <h2>INSERT INTO</h2>
+            <hr>
+            <p>The INSERT INTO statement is used to insert new records in a table.</p>
+            <h4>Syntax : </h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">insert into</span> &lt;tableName&gt; <span
+                        class="reserved">values</span><br>(column1Value,column2Value,column3Value);</p>
+            </div>
+            <h4>Example : </h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">insert into</span> student <span
+                        class="reserved">values</span><br>(1,"Rohit",19),<br>(2,"Jimmy",20),<br>(3,"Arjun",20)<br>(4,"Hardik",20)<br>(5,"Willimason",22)
+                </p>
+            </div>
+        </div>
+    
+        <!--   select statement -->
+        <div class="one" id="select">
+            <h2>select statement</h2>
+            <hr>
+            <p>The SELECT statement is used to select data from a database</p>
+            <h4>Syntax :</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">select</span> column1 , column2 , column3 , ... <span class="reserved">from</span>
+                    &lt;tableName&gt; ;</p>
+            </div>
+            <h4>Example :</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">select</span> * <span class="reserved">from</span> employee;</p>
+            </div>
+            <div class="output">
+                <button class="btns">Copy</button>
+                <table>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>age</th>
+                    </tr>
+    
+                    <tr>
+                        <td>1</td>
+                        <td>Rohit</td>
+                        <td>19</td>
+                    </tr>
+    
+                    <tr>
+                        <td>2</td>
+                        <td>Jimmy</td>
+                        <td>20</td>
+                    </tr>
+    
+                    <tr>
+                        <td>3</td>
+                        <td>Arjun</td>
+                        <td>20</td>
+                    </tr>
+    
+                    <tr>
+                        <td>4</td>
+                        <td>Hardik</td>
+                        <td>20</td>
+                    </tr>
+    
+                    <tr>
+                        <td>5</td>
+                        <td>Williamson</td>
+                        <td>22</td>
+                    </tr>
+    
+                </table>
+            </div>
+        </div>
+        <!--     select statement end-->
+    
+        <!--   update statement -->
+        <div class="one" id="update">
+            <h2>update statement</h2>
+            <hr>
+            <p>The UPDATE statement is used to modify the existing records in a table</p>
+            <h4>Syntax : </h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">update </span> &lt;tableName&gt; <span class="reserved">set </span> columnName =
+                    value , columnName = value <span class="reserved">where clause</span>; </p>
+            </div>
+    
+            <h4>Example : </h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">update </span> employee <span class="reserved">set </span> name = "David" , age =
+                    21 <span class="reserved">where </span> id = 4 ; </p>
+            </div>
+    
+            <div class="output">
+                <button class="btns">Copy</button>
+                <table>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>age</th>
+                    </tr>
+    
+                    <tr>
+                        <td>1</td>
+                        <td>Rohit</td>
+                        <td>19</td>
+                    </tr>
+    
+                    <tr>
+                        <td>2</td>
+                        <td>Jimmy</td>
+                        <td>20</td>
+                    </tr>
+    
+                    <tr>
+                        <td>3</td>
+                        <td>Arjun</td>
+                        <td>20</td>
+                    </tr>
+    
+                    <tr>
+                        <td>4</td>
+                        <td>David</td>
+                        <td>21</td>
+                    </tr>
+    
+                    <tr>
+                        <td>5</td>
+                        <td>Williamson</td>
+                        <td>22</td>
+                    </tr>
+    
+                </table>
+            </div>
+        </div>
+        <!--   update statement end -->
+    
+        <!--   delete statement -->
+        <div class="one" id="delete">
+            <h2> DELETE statement</h2>
+            <hr>
+            <p>The DELETE statement is used to delete existing records in a table.</p>
+            <h4>Syntax : <h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">delete</span> from &lt;tableName&gt; <span class="reserved">where
+                                clause</span> ;</p>
+                    </div>
+                    <h4>Example : </h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">delete</span> from employee <span class="reserved">where</span> id=5 ;</p>
+                    </div>
+        </div>
+        <!--   delete statement end -->
+    
+        <div class="one" id="alter">
+            <h2>Alter table statement</h2>
+            <hr>
+            <p>The ALTER TABLE statement is used to <span class="hlight">add</span>, <span class="hlight">delete</span>, or
+                <span class="hlight">modify</span> columns in an existing table.</p>
+    
+            <p>The ALTER TABLE statement is also used to add and drop various constraints on an existing table.</p>
+            <h4>To add column in existing table use the following syntax : </h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">alter table </span> &lt;tableName&gt; <span class="reserved">add </span>
+                    columnName datatype; </p>
+            </div>
+    
+            <h4>To rename a column in a table, use the following syntax:</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">alter table </span> &lt;tableName&gt; <span class="reserved">rename column </span>
+                    oldName <span class="reserved">to</span> newName; </p>
+            </div>
+    
+            <h4>To delete a column in a table, use the following syntax:</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">alter table </span> &lt;tableName&gt; <span class="reserved">drop column </span>
+                    columnName; </p>
+            </div>
+    
+            <h4>Example to add column in existing table</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">alter table </span> employee <span class="reserved">add </span> country datatype;
+                </p>
+            </div>
+        </div>
+    
+        <!--       select statement part2 -->
+        <!--       order by clause -->
+        <div class="one" id="order_by">
+            <h2> ORDER BY CLAUSE</h2>
+            <hr>
+            <p>The SQL ORDER BY clause is used to sort the result set in either ascending or descending order. </p>
+            <P>The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending
+                order, use the DESC keyword</P>
+            <h4>Syntax : <h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">select</span> columnName1 , columnName2 from &lt;tableName&gt; <span
+                                class="reserved">order by </span> columnName <span class="reserved">asc|desc;</p>
+                    </div>
+                    <h4>Example : </h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">select</span> id , name from <span class="reserved">employee</span> order
+                            by name <span class="reserved">asc ;</span></p>
+                    </div>
+                    <p>The above statement select id and name from the employee table and then sort them in ascending order
+                        by name.</p>
+        </div>
+        <!--       order by clause end -->
+    
+        <!--       group by clause -->
+        <div class="one" id="group_by">
+            <h2> GROUP BY CLAUSE</h2>
+            <hr>
+            <p>The GROUP BY clause is used to group rows by one or more columns. </p>
+            <P>The GROUP BY clause is used in conjunction with aggregate functions such as <span
+                    class="highlight">MIN()</span>, <span class="highlight">MAX()</span>, <span
+                    class="highlight">SUM()</span>, <span class="highlight">AVG()</span> and <span
+                    class="highlight">COUNT()</span>.</P>
+            <h4>Syntax : <h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">select</span> columnName1 , columnName2 , aggregateFuntion from
+                            &lt;tableName&gt; <span class="reserved">group by </span> columnName ;</p>
+                    </div>
+                    <h4>Example : </h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">select</span> age , <span class="reserved">count(*)</span> from <span
+                                class="reserved">employee</span> group by age ;</span></p>
+                    </div>
+                    <p>The above statement groups the rows by <span class="highlight">age</span> column and counts the
+                        number of each age. </p>
+        </div>
+        <!--       group by clause end -->
+    
+        <!--       like operator -->
+        <div class="one" id="like">
+            <h2>LIKE OPERATOR</h2>
+            <hr>
+            <p>The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.<br>There are two
+                wildcards often used in conjunction with the LIKE operator:
+            <ul>
+                <li>The percent sign (<span class="highlight">%</span>) represents zero, one, or multiple characters</li>
+                <li>The underscore sign (<span class="highlight">_</span>) represents one, single character</li>
+            </ul>
+            </p>
+    
+            <h4>Syntax : <h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">select</span> columnName1 , columnName2 from &lt;tableName&gt; <span
+                                class="reserved">where </span> columnName <span class="reserved">like</span> pattern</p>
+                    </div>
+                    <h4>Example 1: </h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">select</span> id , name from <span class="reserved">employee</span> where
+                            name <span class="reserved">like 'r%' ;</span></p>
+                    </div>
+                    <p>The above statement select id and name from the employee table whose name start with r.</p>
+    
+                    <h4>Example 2: </h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">select</span> id , name from <span class="reserved">employee</span> where
+                            name <span class="reserved">like '[!RD]%' ;</span></p>
+                    </div>
+                    <p>The above statement select id and name from the employee table whose name not start with R and D.</p>
+        </div>
+        <!--       like operator end -->
+    
+        <!--       union operator -->
+        <div class="one" id="union">
+            <h2> union operator</h2>
+            <hr>
+            <p>The UNION operator selects rows from two or more tables.
+                If rows of tables are the same, those rows are only included once in the result set</p>
+    
+            <h4>Syntax : <h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">select</span> columnName1 from &lt;tableName1&gt; <br><span
+                                class="reserved">UNION</span><br> select</span> columnName1 from &lt;tableName2&gt;</p>
+                    </div>
+    
+                    <h4>Employee table:</h4>
+                    <div class="output">
+                        <!--       <button class="btns">Copy</button> -->
+                        <table>
+                            <tr>
+                                <th>id</th>
+                                <th>name</th>
+                                <th>age</th>
+                            </tr>
+    
+                            <tr>
+                                <td>1</td>
+                                <td>Rohit</td>
+                                <td>19</td>
+                            </tr>
+    
+                            <tr>
+                                <td>2</td>
+                                <td>Jimmy</td>
+                                <td>20</td>
+                            </tr>
+    
+                            <tr>
+                                <td>3</td>
+                                <td>Arjun</td>
+                                <td>20</td>
+                            </tr>
+    
+                            <tr>
+                                <td>4</td>
+                                <td>Hardik</td>
+                                <td>20</td>
+                            </tr>
+    
+                            <tr>
+                                <td>5</td>
+                                <td>Williamson</td>
+                                <td>22</td>
+                            </tr>
+    
+                        </table>
+                    </div>
+                    <h4>Student table :</h4>
+                    <div class="output">
+                        <!--       <button class="btns">Copy</button> -->
+                        <table>
+                            <tr>
+                                <th>id</th>
+                                <th>name</th>
+                                <th>age</th>
+                            </tr>
+    
+                            <tr>
+                                <td>10</td>
+                                <td>Elvish</td>
+                                <td>19</td>
+                            </tr>
+    
+                            <tr>
+                                <td>11</td>
+                                <td>Nancy</td>
+                                <td>20</td>
+                            </tr>
+    
+                            <tr>
+                                <td>12</td>
+                                <td>Karan</td>
+                                <td>21</td>
+                            </tr>
+    
+                        </table>
+                    </div>
+                    <h4>Example : </h4>
+    
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">select</span> age from <span class="reserved">employee <br><span
+                                    class="reserved">UNION</span><br> select</span> age from <span
+                                class="reserved">student</span> ;</p>
+                    </div>
+                    <h4>OUPUT:</h4>
+                    <div class="output">
+                        <!--       <button class="btns">Copy</button> -->
+                        <table>
+                            <tr>
+                                <th>age</th>
+                            </tr>
+    
+                            <tr>
+                                <td>19</td>
+                            </tr>
+    
+                            <tr>
+                                <td>20</td>
+                            </tr>
+    
+                            <tr>
+                                <td>21</td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                            </tr>
+    
+                        </table>
+                    </div>
+    
+                    <p>The above SQL command returns the age column from the employee table and the student table, ignoring
+                        the duplicate rows.</p>
+        </div>
+        <!--       union operator end -->
+    
+        <!--       subquery -->
+        <div class="one" id="subquery">
+            <h2>SUBQUERY</h2>
+            <hr>
+            <p>It's possible to place a SQL query inside another query known as subquery.<br>In a subquery, the outer
+                query's result is dependent on the result-set of the inner subquery. That's why subqueries are also called
+                nested queries</p>
+    
+            <h4>Syntax : <h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">select</span> columnName1 , columnName2 from &lt;tableName&gt; <span
+                                class="reserved">where </span> columnName expression operator<br>(<span
+                                class="reserved">select</span> columnName from <span
+                                class="reserved">&lt;tableName&gt;</span> where ...);</p>
+                    </div>
+                    <h4>Example : <h4>
+                            <div class="code">
+                                <button class="btns">Copy</button>
+                                <p><span class="reserved">select</span> * from <span class="reserved">employee </span>
+                                    <br>where age =(<span class="reserved">select</span> min(age) from <span
+                                        class="reserved">employee</span>);</p>
+                            </div>
+                            <h4>OUTPUT:</h4>
+                            <div class="output">
+                                <!--       <button class="btns">Copy</button> -->
+                                <table>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>name</th>
+                                        <th>age</th>
+                                    </tr>
+    
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Rohit</td>
+                                        <td>19</td>
+                                    </tr>
+                                </table>
+                            </div>
+    
+                            <p>The above statement :
+                            <ol>
+                                <li>executes the subquery first; selects minimum age from the employee table.</li>
+                                <li>executes the outer query; selects rows where age is equal to the result of subquery.
+                                </li>
+                            </ol>
+                            </p>
+        </div>
+        <!--       subquery end -->
+    
+        <!--       having clause -->
+        <div class="one" id="having">
+            <h2>HAVING CLAUSE</h2>
+            <hr>
+            <p>The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.<br>
+                The HAVING clause in SQL is used if we need to filter the result set based on aggregate functions such as
+                <span class="highlight">MIN()</span> and <span class="highlight">MAX()</span>, <span
+                    class="highlight">SUM()</span> and <span class="highlight">AVG()</span> and <span
+                    class="highlight">COUNT()</span>.
+            </p>
+    
+            <h4>Syntax : <h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">select</span> columnName from &lt;tableName&gt; <br><span
+                                class="reserved">where</span> condition <br><span class="reserved"> group by</span>
+                            columnName<br><span class="reserved">having</span> condition;</p>
+                    </div>
+                    <h4>Example : <h4>
+                            <div class="code">
+                                <button class="btns">Copy</button>
+                                <p><span class="reserved">select</span> count(id) , age from <span
+                                        class="reserved">employee</span> <br><span class="reserved"> group by</span>
+                                    age<br><span class="reserved">having</span> count(id>1);</p>
+                            </div>
+                            <h4>OUTPUT:</h4>
+                            <div class="output">
+                                <!--       <button class="btns">Copy</button> -->
+                                <table>
+                                    <tr>
+                                        <th>count(id)</th>
+                                        <th>age</th>
+    
+                                    </tr>
+    
+                                    <tr>
+                                        <td>1</td>
+                                        <td>19</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>20</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>21</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>22</td>
+                                    </tr>
+                                </table>
+                            </div>
+    
+                            <p>The above statement :
+                            <ol>
+                                <li>counts the number of rows by grouping them by country.</li>
+                                <li>returns the result set if their count is greater than 1.</li>
+                            </ol>
+                            </p>
+        </div>
+        <!--       having clause end -->
+    
+        <!--       exists statement -->
+        <div class="one" id="exists">
+            <h2>EXISTS Statement</h2>
+            <hr>
+            <p>The <span class="highlight">EXISTS</span> operator is used to test for the existence of any record in a
+                subquery.<br>
+    
+                The <span class="highlight">EXISTS</span> operator returns TRUE if the subquery returns one or more
+                records.<br><span class="highlight">EXISTS</span> operator executes the outer SQL query if the subquery is
+                not NULL<br>.</p>
+    
+            <h4>Syntax : <h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">select</span> columnName from &lt;tableName&gt; <br><span
+                                class="reserved">where exists</span> <br>(<span class="reserved"> select</span> columnName
+                            from <span class="reserved">&lt;tableName&gt;</span> where condition );</p>
+                    </div>
+                    <h4>Here I am creating a child <span class="highlight">experience</span> table</h4>
+                    <div class="output">
+                        <!--       <button class="btns">Copy</button> -->
+                        <table>
+                            <tr>
+                                <th>id</th>
+                                <th>T_companySwitch</th>
+                                <th>Experience</th>
+    
+                            </tr>
+    
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>1</td>
+    
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>4</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+    
+                            <tr>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                        </table>
+                    </div>
+    
+                    <h4>Example : <h4>
+                            <div class="code">
+                                <button class="btns">Copy</button>
+                                <p><span class="reserved">select</span> id , name from <span
+                                        class="reserved">employee</span> <br><span class="reserved"> where exists </span> (
+                                    <span class="reserved">select </span>id from <span class="reserved">experience</span>
+                                    where experience.id=employee.id );</p>
+                            </div>
+                            <h4>OUTPUT:</h4>
+                            <div class="output">
+                                <!--       <button class="btns">Copy</button> -->
+                                <table>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>name</th>
+    
+                                    </tr>
+    
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Rohit</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Jimmy</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Arjun</td>
+                                    </tr>
+    
+                                    <tr>
+                                        <td>4</td>
+                                        <td>David</td>
+                                    </tr>
+    
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Williamson</td>
+                                    </tr>
+                                </table>
+                            </div>
+    
+        </div>
+        <!--       exists statement end -->
+        <!--           joins -->
+    
+        <div class="one" id="joins">
+            <h2>JOINS</h2>
+            <hr>
+            <p><span class="highlight">JOIN</span> joins two tables based on a common column, and selects records that have
+                matching values in these columns.</p>
+            <h2>DIFFERENT TYPES OF JOINS : </H2>
+            <ol>
+                <li><span class="highlight">(INNER) JOIN</span> : Returns records that have matching values in both tables.
+                </li>
+                <li><span class="highlight">LEFT (OUTER) JOIN</span> : Returns all records from the left table, and the
+                    matched records from the right table.</li>
+                <li><span class="highlight">RIGHT (OUTER) JOIN</span> : Returns all records from the right table, and the
+                    matched records from the left table.</li>
+                <li><span class="highlight">FULL (OUTER) JOIN</span> : Returns all records when there is a match in either
+                    left or right table.</li>
+            </ol>
+            <div class="join-types">
+                <div class="type"><img
+                        src="https://www.ionos.com/digitalguide/fileadmin/DigitalGuide/Screenshots_2018/innerjoin.png">
+                </div>
+                <div class="type"><img
+                        src="https://www.ionos.com/digitalguide/fileadmin/DigitalGuide/Screenshots_2018/innerjoin.png">
+                </div>
+                <div class="type"><img
+                        src="https://www.ionos.com/digitalguide/fileadmin/DigitalGuide/Screenshots_2018/innerjoin.png">
+                </div>
+                <div class="type"><img
+                        src="https://www.ionos.com/digitalguide/fileadmin/DigitalGuide/Screenshots_2018/innerjoin.png">
+                </div>
+    
+            </div>
+    
+            <h4>INNER JOIN Syntax : <h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">select</span> columnName from &lt;table1&gt; <br><span
+                                class="reserved">inner join</span> &lt;table2&gt; <br><span class="reserved"> on</span>
+                            table1.columnName=table2.columnName;</p>
+                    </div>
+                    <h4>Example : </h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p><span class="reserved">select</span> employee.id , employee.name , experience.experience from
+                            <span class="reserved">employee</span> <br><span class="reserved"> inner join</span>
+                            experience<br><span class="reserved">on</span> employee.id=experience.id;</p>
+                    </div>
+                    <p>The above command returns those rows where there is a match between column values in both join
+                        conditions.</p>
+                    <h4>OUTPUT:</h4>
+                    <div class="output">
+                        <!--       <button class="btns">Copy</button> -->
+                        <table>
+                            <tr>
+                                <th>id</th>
+                                <th>name</th>
+                                <th>experience</th>
+    
+                            </tr>
+    
+                            <tr>
+                                <td>1</td>
+                                <td>Rohit</td>
+                                <td>1</td>
+                            </tr>
+    
+                            <tr>
+                                <td>2</td>
+                                <td>Jimmy</td>
+                                <td>1</td>
+                            </tr>
+    
+                            <tr>
+                                <td>3</td>
+                                <td>Arjun</td>
+                                <td>1</td>
+                            </tr>
+    
+                            <tr>
+                                <td>4</td>
+                                <td>David</td>
+                                <td>2</td>
+                            </tr>
+    
+                            <tr>
+                                <td>5</td>
+                                <td>Williamson</td>
+                                <td>2</td>
+                            </tr>
+                        </table>
+                    </div>
+    
+                    <!--       left join -->
+                    <h2>Left join</h2>
+                    <hr>
+                    <p>The LEFT JOIN keyword returns all records from the left table (table1), and the matching records from
+                        the right table (table2). The result is 0 records from the right side, if there is no match.</p>
+                    <h4>Syntax : <h4>
+                            <div class="code">
+                                <button class="btns">Copy</button>
+                                <p><span class="reserved">select</span> columnName from &lt;table1&gt; <br><span
+                                        class="reserved">left join</span> &lt;table2&gt; <br><span class="reserved">
+                                        on</span> table1.columnName=table2.columnName;</p>
+                            </div>
+                            <h4>Example : </h4>
+                            <div class="code">
+                                <button class="btns">Copy</button>
+                                <p><span class="reserved">select</span> employee.id , employee.name , experience.experience
+                                    from <span class="reserved">employee</span> <br><span class="reserved"> left join</span>
+                                    experience<br><span class="reserved">on</span> employee.id=experience.id;</p>
+                            </div>
+                            <!--       left join end -->
+    
+                            <!--         right join -->
+                            <h2>right join</h2>
+                            <hr>
+                            <p>The RIGHT JOIN keyword returns all records from the right table (table2), and the matching
+                                records from the left table (table1). The result is 0 records from the left side, if there
+                                is no match.</p>
+                            <h4>Syntax : <h4>
+                                    <div class="code">
+                                        <button class="btns">Copy</button>
+                                        <p><span class="reserved">select</span> columnName from &lt;table1&gt; <br><span
+                                                class="reserved">right join</span> &lt;table2&gt; <br><span
+                                                class="reserved"> on</span> table1.columnName=table2.columnName;</p>
+                                    </div>
+                                    <h4>Example : </h4>
+                                    <div class="code">
+                                        <button class="btns">Copy</button>
+                                        <p><span class="reserved">select</span> employee.id , employee.name ,
+                                            experience.experience from <span class="reserved">employee</span> <br><span
+                                                class="reserved"> right join</span> experience<br><span
+                                                class="reserved">on</span> employee.id=experience.id;</p>
+                                    </div>
+                                    <!--         right join end -->
+    
+                                    <!--         full outer join -->
+                                    <h2>FULL outer join</h2>
+                                    <hr>
+                                    <p>The FULL OUTER JOIN keyword returns all records when there is a match in left
+                                        (table1) or right (table2) table records.<br>
+    
+                                        <b>Tip:</b> FULL OUTER JOIN and FULL JOIN are the same.
+                                    </p>
+                                    <h4>Syntax : <h4>
+                                            <div class="code">
+                                                <button class="btns">Copy</button>
+                                                <p><span class="reserved">select</span> columnName from &lt;table1&gt;
+                                                    <br><span class="reserved">right join</span> &lt;table2&gt; <br><span
+                                                        class="reserved"> on</span> table1.columnName=table2.columnName
+                                                    <br><span class="reserved">where</span> condition;</p>
+                                            </div>
+                                            <h4>Example : </h4>
+                                            <div class="code">
+                                                <button class="btns">Copy</button>
+                                                <p><span class="reserved">select</span> employee.id , employee.name ,
+                                                    experience.experience from <span class="reserved">employee</span>
+                                                    <br><span class="reserved"> right join</span> experience<br><span
+                                                        class="reserved">on</span> employee.id=experience.id<br><span
+                                                        class="reserved">order by</span> employee.name;</p>
+                                            </div>
+                                            <!--         full outer join end -->
+    
+        </div>
+        <!--           joins end -->
+        <!--       select statement part 2 end -->
+    
+        <!--         constraints -->
+        <div class="one" id="constraint">
+            <h2>Constraints</h2>
+            <hr>
+            <p>In a database table, we can add rules to a column known as <span class="highlight">constraints</span>. These
+                rules control the data that can be stored in a column.
+    
+                <br><br>For example, if a column has NOT NULL constraint, it means the column cannot store <span
+                    class="highlight">NULL</span> values.
+            </p>
+            <div class="output">
+                <button class="btns">Copy</button>
+                <table>
+                    <tr>
+                        <th>Constraint</th>
+                        <th>Description</th>
+                    </tr>
+    
+                    <tr>
+                        <td>NOT NULL</td>
+                        <td>values cannot be null</td>
+                    </tr>
+    
+                    <tr>
+                        <td>UNIQUE</td>
+                        <td>values cannot match any older value</td>
+                    </tr>
+    
+                    <tr>
+                        <td>PRIMARY KEY</td>
+                        <td>used to uniquely identify a row</td>
+                    </tr>
+    
+                    <tr>
+                        <td>FOREIGN KEY</td>
+                        <td>references a row in another table</td>
+                    </tr>
+    
+                    <tr>
+                        <td>CHECK</td>
+                        <td>validates condition for new value</td>
+                    </tr>
+    
+                    <tr>
+                        <td>DEFAULT</td>
+                        <td>set default value if not passed</td>
+                    </tr>
+    
+                    <tr>
+                        <td>CREATE INDEX</td>
+                        <td>used to speedup the read process</td>
+                    </tr>
+    
+                </table>
+            </div>
+            <h2>NOT NULL</h2>
+            <hr>
+            <p>The <span class="highlight">NOT NULL</span> constraint in a column means that the column cannot store NULL
+                values.</p>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">create table</span> employee(<br>id int <span class="reserved">not null</span>
+                    ,<br> name text <span class="reserved">not null</span> ,<br>age <span class="reserved">int</span> );</p>
+            </div>
+            <p>Here, the id and the name columns of the employee table won't allow NULL values.</p>
+            <!--     not null constraint end -->
+    
+            <!--     unique -->
+            <h2>UNIQUE</h2>
+            <hr>
+            <p>The <span class="highlight">UNIQUE</span> constraint in a column means that the column must have unique
+                value. </p>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">create table</span> employee(<br>id int <span class="reserved">not null</span>
+                    unique ,<br> name text <span class="reserved">not null</span> ,<br>age <span class="reserved">int</span>
+                    );</p>
+            </div>
+            <p>Here, the value of the id column must be unique, as well as it cannot store NULL values.</p>
+            <!--     unique end-->
+    
+            <!--     primary key -->
+            <h2>PRIMARY KEY</h2>
+            <hr>
+            <p>The <span class="highlight">PRIMARY KEY</span> constraint uniquely identifies each record in a table.
+    
+                Primary keys must contain <b><i>UNIQUE</i></b> values, and cannot contain <b><i>NULL</i></b> values.
+    
+                A table can have only <b><i>ONE</i></b> primary key; and in the table, this primary key can consist of
+                single or multiple columns (fields). </p>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">create table</span> employee(<br>id int <span class="reserved">primary key</span>
+                    ,<br> name text <span class="reserved">not null</span> ,<br>age <span class="reserved">int</span> );</p>
+            </div>
+            <p>Here, the value of the <b><i>id</i></b> column is a unique identifier for a row. Similarly, it cannot store
+                <b><i>NULL</i></b> value and must be <b><i>UNIQUE</i></b>.</p>
+            <!--     primary key end -->
+    
+            <!--     foreign key -->
+            <h2>FOREIGN KEY</h2>
+            <hr>
+            <p>The <span class="highlight">FOREIGN KEY</span> (REFERENCES in some databases) constraint in a column is used
+                to reference a record that exists in another table.<br>The <span class="highlight">FOREIGN KEY</span>
+                constraint is used to prevent actions that would destroy links between tables.</p>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">create table</span> experience(<br>id int <span class="reserved">primary
+                        key</span> ,<br> T_companySwitch <span class="reserved">int</span> ,<br>experience <span
+                        class="reserved">int</span><br><span class="reserved">foreign key</span> (id) <span
+                        class="reserved">references</span> employee (id));</p>
+            </div>
+            <p>Here the value of id in the experience table must be a value from the id column of the employee table.</p>
+            <!--     foreign key end -->
+    
+            <!--     check constraint -->
+            <h2>CHECK</h2>
+            <hr>
+            <p>The <span class="highlight">CHECK</span> constraint checks the condition before allowing values in a table.
+            </p>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">create table</span> experience(<br>id <span class="reserved">int</span> ,<br>
+                    T_companySwitch <span class="reserved">int</span> <span class="reserved">check</span> (T_companySwitch
+                    <=4);< /p>
+            </div>
+            <p>Here, the value of the T_companySwitch column must be less than or equal to 4. If not, the SQL statement
+                results in an error.</p>
+            <!--     check constraint end -->
+    
+            <!--     default constraint -->
+            <h2>DEFAULT</h2>
+            <hr>
+            <p>The <span class="highlight">DEFAULT</span> constraint is used to set the default value if we try to store
+                <b><i>NULL</i></b> in a column.</p>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">create table</span> experience(<br>id <span class="reserved">int</span> ,<br>
+                    T_companySwitch <span class="reserved">int ,</span> <br>experience int <span
+                        class="reserved">default</span> 1;</p>
+            </div>
+            <p>Here, the default value of the <b><i>experience</b></i> column is 1.
+    
+                If we try to store the NULL value in the <b><i>experience</i></b> column, its value will be 1.</p>
+            <!--     default constraint end -->
+    
+            <!--     create index -->
+            <h2>CREATE INDEX</h2>
+            <hr>
+            <p>If a column has <span class="highlight">CREATE INDEX</span> constraint, it's faster to retrieve data if we
+                use that column for data retrieval.</p>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">create table</span> experience(<br>id <span class="reserved">int</span> primary
+                    key ,<br> T_companySwitch <span class="reserved">int </span>, <br> experience <span class="reserved">int
+                    </span>);<br><br>
+                    <span class="reserved">create index</span> exIndex<br><span class="reserved">on</span> experience (id);
+                </p>
+            </div>
+            <p>Here, the SQL command creates an index named exIndex on the <b><i>experience</i></b> table using id column.
+                <br><br>
+                <b>Note:</b> We cannot see the speed difference with less records in a table. However, we can easily notice
+                the speed difference between using indexes and not using indexes
+            </p>
+            <!--     create index end -->
+    
+        </div>
+        <!--         constraints -->
+    
+        <!--                   view  -->
+    
+        <div class="one" id="views">
+            <h2>Views</h2>
+            <hr>
+            <p><span class="highlight">Views</span> in SQL are kind of <b><i>virtual tables</i></b>. A view also has
+                <b>rows</b> and <b>columns</b> as they are in a real table in the database. We can create a view by
+                selecting fields from one or more tables present in the database. A View can either have all the rows of a
+                table or specific rows based on certain condition.</p>
+            <h2>Creating views</h2>
+            <p>We can create View using <b><i>CREATE VIEW</i></b> statement. A View can be created from a single table or
+                multiple tables</p>
+            <h4>Syntax</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">create view</span> as <span class="reserved"> &lt;viewName&gt;<br></span>select
+                    column1 , column2 , ... from <span class="reserved">&lt;tableName&gt;</span> <br><span
+                        class="reserved">where</span> condition;</p>
+            </div>
+    
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">create view</span> as <span class="reserved"> below4<br></span>select id , name
+                    from <span class="reserved">employee</span> <br><span class="reserved">where</span> id<4;< /p>
+            </div>
+            <p>In this example we will create a View named <b><i>below4</i></b> from the table employee.<br>To see the data
+                in the View, we can query the view in the same manner as we query a table eg. <b><i>select * from
+                        below4</i></b>
+    
+            </p>
+    
+            <h2>Deleting views</h2>
+            <p>We have learned about creating a View, but what if a created View is not needed any more? Obviously we will
+                want to delete it. SQL allows us to delete an existing View. We can delete or drop a View using the
+                <b></i>DROP</b></i> statement.</p>
+            <h4>Syntax</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">drop </span>view <span class="reserved">&lt;viewName&gt;;</p>
+            </div>
+    
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">drop </span>view <span class="reserved">below4;</p>
+            </div>
+    
+            <h2>Updating views</h2>
+            <p>There are certain conditions needed to be satisfied to update a view. If any one of these conditions is
+                <b><i>not</i></b> met, then we will not be allowed to update the view.
+            <ol>
+                <li>The <b></i>SELECT</i></b> statement which is used to create the view should not include <b><i>GROUP
+                            BY</i></b> clause or <b><i>ORDER BY</i></b> clause.</li>
+                <li>The SELECT statement should not have the <b><i>DISTINCT</i></b> keyword</li>
+                <li>The View should have all <b><i>NOT NULL</i></b> values.</li>
+                <li>The view should not be created using <b><i>nested</i></b> queries or complex queries.</li>
+                <li>The view should be created from a <b><i>single table</i></b>. If the view is created using
+                    <b><i>multiple tables</i></b> then we will not be allowed to <b></i>update</i></b> the view.</li>
+            </ol>
+            </p>
+    
+        </div>
+        <!--                   view end -->
+    
+        <div class="one" id="grant_revoke">
+            <h2>Grant and revoke</h2>
+            <hr>
+            <p>Data Controlling Language (DCL) helps users to retrieve and modify the data stored in the database with some
+                specified queries. <span class="highlight">Grant</span> and <span class="highlight">Revoke</span> belong to
+                these types of commands of the Data controlling Language</p>
+            <h4>Grant</h4>
+            <p>SQL Grant command is specifically used to provide privileges to database objects for a user. This command
+                also allows users to grant permissions to other users too.</p>
+            <h4>Syntax</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">grant</span> &lt;privilageName&gt; <span class="reserved"> on
+                        &lt;</span>objectName&gt;<br><span class="resereved">to </span>{userName | public | roleName};</p>
+            </div>
+    
+            <h4>Parameters of Grant Command </h4>
+            <ul>
+                <li><b>privilegeName:</b> It represents the permission that is to be granted.</li>
+                <li><b>objectName:</b> It represents the name of the database object, i.e., view, table, index, etc.</li>
+                <li><b>userName:</b> It represents the user to which permission is to be provided.</li>
+                <li><b>public:</b> It represents that all database users are given permissions.</li>
+                <li><b>role_name:</b> It represents that users with a particular role are given these permissions.</li>
+    
+            </ul>
+    
+            <h4>To grant <b><i>SELECT</i></b> permission to a single user</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">grant</span> select <span class="reserved"> on </span>employee<br><span
+                        class="resereved">to </span>manager;</p>
+            </div>
+    
+            <h4>ExampleTo grant <b><i>SELECT</i></b> permission to public</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">grant</span> select <span class="reserved"> on </span>employee<br><span
+                        class="resereved">to </span>public;</p>
+            </div>
+    
+            <!--         revoke -->
+            <h2>REVOKE Command</h2>
+            <hr>
+            <p>The <span class="highlight">REVOKE</span> command in SQL is used to revoke or withdraw permissions that were
+                previously granted to an account on a database object. Therefore, we can think of <span
+                    class="highlight">REVOKE</span> as a tool to limit a role's or user's ability to perform
+                <b><i>SELECT</i></b>, <b><i>INSERT</i></b>, <b><i>DELETE</i></b>, <b><i>UPDATE</i></b> and
+                <b><i>CREATE</i></b> statements on database objects., as well as to set constraints like foreign keys and
+                update data records, among other operations.
+    
+                <br><br>The <span class="highlight">REVOKE</span> command is the opposite of the command GRANT, which allows
+                a user account or role access to the database object.
+            </p>
+            <h4>Syntax</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">revoke</span> &lt;privilageName&gt; <span class="reserved"> on
+                        &lt;</span>objectName&gt;<br><span class="resereved">from </span>Role {cascade | restrict};</p>
+            </div>
+    
+            <h4>PARAMETERS OF REVOKE COMMAND</h4>
+            <ul>
+                <li><b>PRIVILEGES:</b> We provide the privilege(s) that need to be revoked for a user account in this
+                    parameter. The privileges include <b><i>SELECT</i></b> , <b><i>INSERT</i></b>, <b><i>DELETE</i></b>,
+                    <b><i>UPDATE</i></b> and <b><i>CREATE</i></b> commands.</li>
+                <li><b>DATABASE OBJECTS:</b> Database objects are database entities that could range from specific tables to
+                    all the tables in a schema.</li>
+                <li><b>ROLE | USER:</b> The USER or the ROLE can be used to specify the user account from which the
+                    permissions have to be revoked.</li>
+                <li><b>CASCADE | RESTRICT:</b> We can show that the revocation of the aforementioned PRIVILEGES can also
+                    remove the other privileges which derive their powers from the revoked privilege using CASCADE. In the
+                    absence of it, we can limit/ <span class="highlight">RESTRICT</span> revocation to just the designated
+                    privilege.</li>
+            </ul>
+            <h4>Example : REVOKE UPDATE Privilege</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">revoke</span> update <span class="reserved"> on </span>employee<br><span
+                        class="resereved">from </span>manager;</p>
+            </div>
+            <p>The above statement revoke an <b>updated privilege</b> granted to a user manager on the data object employee.
+            </p>
+    
+            <h4>Example : REVOKE SELECT Privilege</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">revoke</span> select <span class="reserved"> on </span>employee<br><span
+                        class="resereved">from </span>manager;</p>
+            </div>
+            <p>The above statement revoke an select privilege granted to a user manager on the data object employee.</p>
+    
+            <h4>Example : REVOKE INSERT Privilege</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">revoke</span> insert <span class="reserved"> on </span>employee<br><span
+                        class="resereved">from </span>manager;</p>
+            </div>
+            <p>The above statement revoke an <b>insert privilege</b> granted to a user manager on the data object employee.
+            </p>
+    
+            <h4>Example : REVOKE DELETE Privilege</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">revoke</span> delete <span class="reserved"> on </span>employee<br><span
+                        class="resereved">from </span>manager;</p>
+            </div>
+            <p>The above statement revoke an <b>delete privilege</b> granted to a user manager on the data object employee.
+            </p>
+    
+            <h4>Example : REVOKE TRUNCATE Privilege</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">revoke</span> truncate <span class="reserved"> on </span>employee<br><span
+                        class="resereved">from </span>manager;</p>
+            </div>
+            <p>The above statement revoke an <b>truncate privilege</b> granted to a user manager on the data object
+                employee.</p>
+    
+        </div>
+        <!--       revoke and grant end -->
+    
+        <div class="one" id="char_func">
+            <h2>Character functions</h2>
+            <hr>
+            <p>Character functions accept character inputs and can return either characters or number values as output.SQL
+                provides a rich set of character functions that allow you to get information about strings and modify the
+                contents of those strings in multiple ways.</p>
+            <h4>Character functions are of the following two types:</h4>
+            <ol>
+                <li><b>Case-Manipulative Functions</b> (LOWER, UPPER and INITCAP)</li>
+                <li><b>Character-Manipulative Functions</b> (CONCAT, LENGTH, SUBSTR, INSTR, LPAD, RPAD, TRIM and REPLACE)
+                </li>
+            </ol>
+    
+            <h4>Case-Manipulative Functions</h4>
+            <hr>
+            <h4>1. Lower</h4>
+            <p>This function converts alpha character values to lowercase. LOWER will actually return a fixed-length string
+                if the incoming string is fixed-length. LOWER will not change any characters in the string that are not
+                letters, since case is irrelevant for numbers and special characters, such as the dollar sign ( $ ) or
+                modulus ( % ).</p>
+            <h4>Syntax</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">lower </span>(column | expression) ;</p>
+            </div>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">select </span> lower("HELLO");</p>
+            </div>
+            <h4>OUTPUT:</h4>
+            <div class="output">
+                <table>
+                    <tr>
+                        <th>lower("HELLO")</th>
+                    </tr>
+    
+                    <tr>
+                        <td>lower</td>
+                    </tr>
+                </table>
+            </div>
+    
+            <!--         upper -->
+            <h4>2. Upper</h4>
+            <p>This function converts alpha character values to uppercase. .</p>
+            <h4>Syntax</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">upper </span>(column | expression) ;</p>
+            </div>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">select </span> upper("hello");</p>
+            </div>
+            <h4>OUTPUT:</h4>
+            <div class="output">
+                <table>
+                    <tr>
+                        <th>upper("hello")</th>
+                    </tr>
+    
+                    <tr>
+                        <td>HELLO</td>
+                    </tr>
+                </table>
+            </div>
+    
+            <h4>3. INITCAP</h4>
+            <p>This function converts alpha character values to uppercase for the first letter of each word and all others
+                in lowercase. The words in the string is must be separated by either # or _ or space. .</p>
+            <h4>Syntax</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">initcap </span>(column | expression) ;</p>
+            </div>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">select </span> initcap("hello developer");</p>
+            </div>
+    
+            <h4>OUTPUT:</h4>
+            <div class="output">
+                <table>
+                    <tr>
+                        <th>initcap("hello dev")</th>
+                    </tr>
+    
+                    <tr>
+                        <td>Hello Dev</td>
+                    </tr>
+                </table>
+            </div>
+    
+            <!--     character manipulative functions -->
+            <h4>Character-Manipulative Functions</h4>
+            <hr>
+            <h4>1. Concat</h4>
+            <p>This function always appends ( concatenates ) string2 to the end of string1. If either of the string is NULL,
+                CONCAT function returns the non-NULL argument. If both strings are NULL, CONCAT returns NULL.</p>
+            <h4>Syntax</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">concat </span>(string1 , string2) ;</p>
+            </div>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">select </span> concat("hello", " developer");</p>
+            </div>
+    
+            <h4>OUTPUT:</h4>
+            <div class="output">
+                <table>
+                    <tr>
+                        <th>concat("hello", " developer")</th>
+                    </tr>
+    
+                    <tr>
+                        <td>hello developer</td>
+                    </tr>
+                </table>
+            </div>
+    
+            <h4>2. Length</h4>
+            <p>This function returns the length of the input string. If the input string is <b>NULL</b>, then LENGTH
+                function returns <b>NULL</b> and not Zero.</p>
+            <h4>Syntax</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">length </span>(column | expression) ;</p>
+            </div>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">select </span> length("hello developer");</p>
+            </div>
+    
+            <h4>OUTPUT:</h4>
+            <div class="output">
+                <table>
+                    <tr>
+                        <th>length("hello developer")</th>
+                    </tr>
+    
+                    <tr>
+                        <td>15</td>
+                    </tr>
+                </table>
+            </div>
+    
+            <!--     substr -->
+            <h4>3. Substr</h4>
+            <p>This function returns a portion of a string from a given start point to an end point. If a substring length
+                is not given, then SUBSTR returns all the characters till the end of string.</p>
+            <h4>Syntax</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">substr </span>(string , start-index , length_of_extracted_string) ;</p>
+            </div>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">select </span> substr("js developer",3,8);</p>
+            </div>
+    
+            <h4>OUTPUT:</h4>
+            <div class="output">
+                <table>
+                    <tr>
+                        <th>substr("js developer",3,8)</th>
+                    </tr>
+    
+                    <tr>
+                        <td>develop</td>
+                    </tr>
+                </table>
+            </div>
+    
+            <!--     instr -->
+            <h4>4. INSTR</h4>
+            <p>This function returns numeric position of a character or a <b>string</b> in a given string. Optionally, you
+                can provide a position <b>m</b> to start searching, and the occurrence <b>n</b> of string. Also, if the
+                starting position is not given, then it starts search from index 1, by default. If after searching in the
+                string, no match is found then, INSTR function returns 0.</p>
+            <h4>Syntax</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">instr </span>(column | expression , string , m , n) ;</p>
+            </div>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">select </span> instr('Google apps are great applications','app',1,2);</p>
+            </div>
+    
+            <h4>OUTPUT:</h4>
+            <div class="output">
+                <table>
+                    <tr>
+                        <th>instr('Google apps are great applications','app',1,2)</th>
+                    </tr>
+    
+                    <tr>
+                        <td>23</td>
+                    </tr>
+                </table>
+            </div>
+    
+            <!--     trim -->
+            <h4>5. Trim</h4>
+            <p>This function trims the string input from the start or end (or both). If no string or char is specified to be
+                trimmed from the string and there exists some extra space at start or end of the string, then those extra
+                spaces are trimmed off.</p>
+            <h4>Syntax</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">trim </span>(trailing from trim_source) ;</p>
+            </div>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">select </span> trim('H' from 'Hello');</p>
+            </div>
+    
+            <h4>OUTPUT:</h4>
+            <div class="output">
+                <table>
+                    <tr>
+                        <th>trim('H' from 'Hello')</th>
+                    </tr>
+    
+                    <tr>
+                        <td>ello</td>
+                    </tr>
+                </table>
+            </div>
+    
+            <!--     replace -->
+            <h4>6. Replace</h4>
+            <p>This function searches for a character string and, if found, replaces it with a given replacement string at
+                all the occurrences of the string. </p>
+            <h4>Syntax</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">replace </span>(string , search_string , replacement_string) ;</p>
+            </div>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">select </span> replace("js developer", "js" , "JavaScript");</p>
+            </div>
+    
+            <h4>OUTPUT:</h4>
+            <div class="output">
+                <table>
+                    <tr>
+                        <th>replace("js developer", "js" , "JavaScript")</th>
+                    </tr>
+    
+                    <tr>
+                        <td>JavaScript developer</td>
+                    </tr>
+                </table>
+            </div>
+    
+        </div>
+        <!--       character function end -->
+    
+        <!--     date functions -->
+        <div class="one" id="date_func">
+            <h2>date functions</h2>
+            <hr>
+            <p>In SQL, dates are complicated for newbies, since while working with a database, the format of the data in the
+                table must be matched with the input data to insert. In various scenarios instead of date, datetime (time is
+                also involved with date) is used.
+    
+                <br><br>For storing a date or a date and time value in a database,MySQL offers the following data types:
+            </p>
+            <div class="output">
+                <table>
+    
+                    <tr>
+                        <td>DATE</td>
+                        <td>format YYYY-MM-DD</td>
+                    </tr>
+    
+                    <tr>
+                        <td>DATETIME</td>
+                        <td>format: YYYY-MM-DD HH:MI: SS</td>
+                    </tr>
+    
+                    <tr>
+                        <td>TIMESTAMP</td>
+                        <td>format: YYYY-MM-DD HH:MI: SS</td>
+                    </tr>
+    
+                    <tr>
+                        <td>YEAR</td>
+                        <td>format YYYY or YY</td>
+                    </tr>
+    
+                </table>
+            </div>
+            <p>Some popular date functions are : </p>
+            <h2>NOW()</h2>
+            <p>Returns the current date and time.</p>
+            <h4>Example<h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p>select <span class="reserved">now();</p>
+                    </div>
+    
+                    <h2>CURDATE()</h2>
+                    <p>Returns the current date .</p>
+                    <h4>Example<h4>
+                            <div class="code">
+                                <button class="btns">Copy</button>
+                                <p>select <span class="reserved">curdate();</p>
+                            </div>
+                            <h2>CURTIME()</h2>
+                            <p>Returns the current time.</p>
+                            <h4>Example<h4>
+                                    <div class="code">
+                                        <button class="btns">Copy</button>
+                                        <p>select <span class="reserved">curtime();</p>
+                                    </div>
+    
+                                    <h2>DATE()</h2>
+                                    <p>Extracts the date part of a date or date/time expression.</p>
+                                    <h4>Example<h4>
+                                            <div class="code">
+                                                <button class="btns">Copy</button>
+                                                <p>select <span class="reserved">date('2022-04-26 16:44:15.581');</p>
+                                            </div>
+                                            <h4>Output</h4>
+                                            <div class="output">
+                                                <table>
+                                                    <tr>
+                                                        <th>date('2022-04-26 16:44:15.581')</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2022-04-26</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+    
+                                            <h2>EXTRACT()</h2>
+                                            <p>Returns a single part of a date/time.</p>
+                                            <H4>Syntax</h4>
+                                            <div class="code">
+                                                <button class="btns">Copy</button>
+                                                <p><span class="reserved">extract(unit , from date);</p>
+                                            </div>
+                                            <h4>Example<h4>
+                                                    <div class="code">
+                                                        <button class="btns">Copy</button>
+                                                        <p>select <span class="reserved">extract(day from '2022-04-26
+                                                                16:44:15.581');</p>
+                                                    </div>
+                                                    <h4>Output</h4>
+                                                    <div class="output">
+                                                        <table>
+                                                            <tr>
+                                                                <th>extract(day from '2022-04-26 16:44:15.581')</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>26</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+    
+    
+                                                    <h2>DATE_ADD() </h2>
+                                                    <p>Adds a specified time interval to a date.</p>
+                                                    <H4>Syntax</h4>
+                                                    <div class="code">
+                                                        <button class="btns">Copy</button>
+                                                        <p><span class="reserved">date_add(date , interval expr type);</p>
+                                                    </div>
+                                                    <h4>Example<h4>
+                                                            <div class="code">
+                                                                <button class="btns">Copy</button>
+                                                                <p>select <span class="reserved">date_add('2020-04-20' ,
+                                                                        interval 1 year);</p>
+                                                            </div>
+                                                            <h4>Output</h4>
+                                                            <div class="output">
+                                                                <table>
+                                                                    <tr>
+                                                                        <th>date_add('2020-04-20' , interval 1 year)</th>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2021</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+    
+    
+        </div>
+    
+        <!--     date functions end -->
+    
+    
+        <!--                   group function  -->
+        <div class="one" id="group_func">
+            <h2>Group Functions</h2>
+            <hr>
+            <p>Group functions are mathematical functions to operate on sets of rows to give one result per set. The types
+                of group functions (also called aggregate functions) are: AVG, that calculates the average of the specified
+                columns in a set of rows, COUNT, calculating the number of rows in a set.</p>
+    
+            <div class="output">
+                <table>
+                    <tr>
+                        <th>Function</th>
+                        <th>Description</th>
+                    </tr>
+    
+                    <tr>
+                        <td>sum</td>
+                        <td>Returns the total sum</td>
+                    </tr>
+                    <tr>
+                        <td>min</td>
+                        <td>Returns the lowest value</td>
+                    </tr>
+    
+                    <tr>
+                        <td>max</td>
+                        <td>Returns the highest value</td>
+                    </tr>
+    
+                    <tr>
+                        <td>avg</td>
+                        <td>Returns the average value</td>
+                    </tr>
+    
+                    <tr>
+                        <td>count(*)</td>
+                        <td>Returns the number of records in a table</td>
+                    </tr>
+    
+                    <tr>
+                        <td>count(column)</td>
+                        <td>Returns the number of values (NULL values will not be counted) of the specified column</td>
+                    </tr>
+    
+    
+                    <tr>
+                        <td>COUNT (DISTINCT column)</td>
+                        <td>Returns the number of distinct values</td>
+                    </tr>
+    
+    
+    
+                </table>
+            </div>
+            <h4>Syntax</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">select</span> columnName1 , group_Funtion from &lt;tableName&gt;<br><span
+                        class="reserved">where</span> condition <span class="reserved">group by </span> columnName ;</p>
+            </div>
+            <h4>Bowler table</h4>
+            <div class="output">
+                <!--       <button class="btns">Copy</button> -->
+                <table>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>salary</th>
+                        <th>city</th>
+    
+                    </tr>
+    
+                    <tr>
+                        <td>101</td>
+                        <td>Bumrah</td>
+                        <td>10000</td>
+                        <td>Mumbai</td>
+                    </tr>
+    
+                    <tr>
+                        <td>102</td>
+                        <td>Bhuvaneshwar</td>
+                        <td>80000</td>
+                        <td>Mumbai</td>
+                    </tr>
+    
+                    <tr>
+                        <td>103</td>
+                        <td>Null</td>
+                        <td>5000</td>
+                        <td>Indore</td>
+                    </tr>
+    
+                    <tr>
+                        <td>104</td>
+                        <td>Bolt</td>
+                        <td>70000</td>
+                        <td>Goa</td>
+                    </tr>
+    
+                    <tr>
+                        <td>105</td>
+                        <td>Hazelwood</td>
+                        <td>5000</td>
+                        <td>Goa</td>
+                    </tr>
+                </table>
+            </div>
+            <h4>Example</h4>
+            <div class="code">
+                <button class="btns">Copy</button>
+                <p><span class="reserved">select</span> city , <span class="reserved">sum(salary)</span> from bowler <span
+                        class="reserved">group by </span> city ;</p>
+            </div>
+            <h4>Output</h4>
+            <div class="output">
+                <!--       <button class="btns">Copy</button> -->
+                <table>
+                    <tr>
+                        <th>city</th>
+                        <th>sum(salary)</th>
+    
+    
+                    </tr>
+    
+                    <tr>
+                        <td>Mumbai</td>
+                        <td>90000</td>
+    
+                    </tr>
+    
+                    <tr>
+                        <td>Indore</td>
+                        <td>5000</td>
+                    </tr>
+    
+                    <tr>
+                        <td>Goa</td>
+                        <td>75000</td>
+                    </tr>
+    
+    
+                </table>
+            </div>
+            <p>The above statement calculate the sum of salary from the bowler table group by city.</p>
+    
+        </div>
+        <!--                   group function end -->
+<!--     
+        <div id="bottom">
+            <p>Bottom Part</p>
+        </div> -->
+    </div>
+
+
+</div>
+   
+    <script>
+        const btns = document.querySelectorAll('.btns')
+        btns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const txt = btn.nextElementSibling.innerText;
+                btn.innerHTML = "Copied";
+                setTimeout(() => {
+                    btn.innerHTML = "Copy";
+                }, 2000)
+                copyToClipboard(txt)
+            })
+        })
+
+        function copyToClipboard(txt) {
+            navigator.clipboard.writeText(txt)
+                .then(() => console.log(`${txt} was copied...`))
+                .catch((e) => console.log('Copy failed ${e}'))
+        }
+
+
+        
+function search() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("topic");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+    </script>
+    
+
+</body>
+
+</html>

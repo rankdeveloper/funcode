@@ -18,10 +18,10 @@
         }
 
         p {
-            color:
-                #00252e;
+            color: #00252e;
             font-weight: normal;
         }
+
 
         .output {
             width: 600px;
@@ -29,9 +29,7 @@
             /* height:400px; */
             border: 0 2px solid #36b393;
             padding: 2rem;
-
         }
-
 
 
         .test {
@@ -86,14 +84,12 @@
 
         .test-inner .g-home button:hover {
             text-decoration: underline;
-
         }
 
 
         .logo img {
             width: 100%;
             height: 100%;
-
         }
 
         span {
@@ -101,20 +97,19 @@
         }
 
         code {
-            /* text-transform: uppercase; */
             font-family: Arial, Helvetica, sans-serif;
             margin-bottom: 1rem;
         }
 
         @media screen and (max-width:500px) {
-            .output{
-                width:450px;
+            .output {
+                width: 450px;
             }
 
             .test .search input {
-                width:80%;
+                width: 80%;
             }
-            
+
         }
     </style>
 
@@ -140,31 +135,32 @@
 
                 </div>
                 <div class="search">
-                    <input type="text" onkeyup="search()" placeholder="Enter to search..." id="searchbar">
+                    <input type="text" onkeyup="search()" placeholder="Enter to search..." id="search">
                 </div>
             </header>
 
 
-            <ul>
-                <li><a class="nav-link i1" onclick="openResources(event,'First_section')" id="defaultOpen">1 Program</a>
+            <ul id="topics">
+                <li><a class="nav-link item" onclick="openResources(event,'First_section')" id="defaultOpen">1
+                        Program</a>
                 </li>
-                <li><a class="nav-link i1" onclick="openResources(event,'Second_section')">2 Program</a></li>
-                <li><a class="nav-link i1" onclick="openResources(event,'Third_section')">3 Program</a></li>
-                <li><a class="nav-link i1" onclick="openResources(event,'Fourth_section')">4 Program</a></li>
-                <li><a class="nav-link" onclick="openResources(event,'Fifth_section')">5 Program</a></li>
-                <li><a class="nav-link" onclick="openResources(event,'Sixth_section')">6 Program</a></li>
-                <li><a class="nav-link" onclick="openResources(event,'Seventh_section')">7 Program</a></li>
-                <li><a class="nav-link" onclick="openResources(event,'Eighth_section')">8 Program</a></li>
-                <li><a class="nav-link" onclick="openResources(event,'Nineth_section')">9 Program</a></li>
-                <li><a class="nav-link" onclick="openResources(event,'Tenth_section')">10 Program</a></li>
-                <li><a class="nav-link" onclick="openResources(event,'11th_section')">11 Program</a></li>
-                <li><a class="nav-link" onclick="openResources(event,'12th_section')">12 Program</a></li>
-                <li><a class="nav-link" onclick="openResources(event,'13th_section')">13 Program</a></li>
-                <li><a class="nav-link" onclick="openResources(event,'14th_section')">14 Program</a></li>
-                <li><a class="nav-link" onclick="openResources(event,'15th_section')">15 Program</a></li>
-                <li><a class="nav-link" onclick="openResources(event,'16th_section')">16 Program</a></li>
-                <li><a class="nav-link" onclick="openResources(event,'17th_section')">17 Program</a></li>
-                <li><a class="nav-link" onclick="openResources(event,'18th_section')">18 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'Second_section')">2 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'Third_section')">3 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'Fourth_section')">4 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'Fifth_section')">5 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'Sixth_section')">6 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'Seventh_section')">7 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'Eighth_section')">8 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'Nineth_section')">9 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'Tenth_section')">10 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'11th_section')">11 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'12th_section')">12 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'13th_section')">13 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'14th_section')">14 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'15th_section')">15 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'16th_section')">16 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'17th_section')">17 Program</a></li>
+                <li><a class="nav-link item" onclick="openResources(event,'18th_section')">18 Program</a></li>
             </ul>
 
 
@@ -184,12 +180,7 @@
                     </div>
 
                     <div class="output" id="text">
-
                     </div>
-
-
-
-
                 </div>
 
 
@@ -200,7 +191,6 @@
                 <header>Program 2 </header><br>
                 <code>Write CSS code for this output using margin.
                          Here the height and width of the div is 200px.</code>
-
                 <div class="border">
 
                     <div class="buttons">
@@ -212,11 +202,7 @@
 
                     </div>
 
-
-
-
                 </div>
-
 
             </section>
 
@@ -238,11 +224,7 @@
 
                     </div>
 
-
-
-
                 </div>
-
 
             </section>
 
@@ -260,11 +242,8 @@
                     </div>
 
                     <div class="output" id="text4">
-
                     </div>
-
                 </div>
-
 
             </section>
 
@@ -283,11 +262,8 @@
                     </div>
 
                     <div class="output" id="text5">
-
                     </div>
-
                 </div>
-
 
             </section>
 
@@ -306,11 +282,8 @@
                     </div>
 
                     <div class="output" id="text6">
-
                     </div>
-
                 </div>
-
 
             </section>
 
@@ -330,9 +303,7 @@
                     </div>
 
                     <div class="output" id="text7">
-
                     </div>
-
                 </div>
 
 
@@ -351,11 +322,8 @@
                         <button onclick="output8()">Output</button>
                         <button onclick="code8()">Code</button>
                     </div>
-
                     <div class="output" id="text8">
-
                     </div>
-
                 </div>
 
             </section>
@@ -375,9 +343,7 @@
                     </div>
 
                     <div class="output" id="text9" style="color:white;">
-
                     </div>
-
                 </div>
 
             </section>
@@ -394,11 +360,9 @@
                         <button onclick="output10()">Output</button>
                         <button onclick="code10()">Code</button>
                     </div>
-
                     <div class="output" id="text10" style="color:white;">
 
                     </div>
-
                 </div>
 
             </section>
@@ -417,9 +381,7 @@
                     </div>
 
                     <div class="output" id="text11" style="color:white;">
-
                     </div>
-
                 </div>
 
             </section>
@@ -438,9 +400,7 @@
                     </div>
 
                     <div class="output" id="text12" style="color:white;">
-
                     </div>
-
                 </div>
 
             </section>
@@ -460,9 +420,7 @@
                     </div>
 
                     <div class="output" id="text13" style="color:white;">
-
                     </div>
-
                 </div>
 
             </section>
@@ -479,9 +437,7 @@
                         <button onclick="output14()">Output</button>
                         <button onclick="code14()">Code</button>
                     </div>
-
                     <div class="output" id="text14" style="color:white;">
-
                     </div>
 
                 </div>
@@ -501,9 +457,7 @@
                     </div>
 
                     <div class="output" id="text15" style="color:white;">
-
                     </div>
-
                 </div>
 
             </section>
@@ -522,9 +476,7 @@
                     </div>
 
                     <div class="output" id="text16" style="color:white;">
-
                     </div>
-
                 </div>
 
             </section>
@@ -544,9 +496,7 @@
                     </div>
 
                     <div class="output" id="text17" style="color:white;">
-
                     </div>
-
                 </div>
 
             </section>
@@ -574,11 +524,6 @@
             </section>
 
 
-
-
-
-
-
         </div>
 
     </main>
@@ -598,9 +543,6 @@
                         src="../images/linkdlin.png"></a>
                 <a href="https://github.com/rankdeveloper" target="_blank"><img src="../images/github.png"></a>
                 <a href="mailto:iamrankush@gmail.com" target="_blank"><img src="../images/email.png"></a>
-
-
-
 
             </div>
         </div>
@@ -861,29 +803,56 @@
 
         //search
 
+        // function search() {
+
+        //     var searchbar = document.getElementById("searchbar").value;
+
+        //     searchbar = searchbar.toLowerCase();
+        //     // var active=document.getElementsByClassName('active');
+
+        //     var x = document.getElementsByClassName("i1");
+
+        //     for (var i = 0; i < x.length; i++) {
+
+        //         if (!x[i].innerHTML.toLowerCase().includes(searchbar)) {
+        //             x[i].style.display = "none";
+        //             x[i].classList.add('active');
+        //         }
+
+        //         else {
+        //             x[i].style.display = "block";
+        //         }
+        //     }
+        // }
+
+
         function search() {
-
-            var searchbar = document.getElementById("searchbar").value;
-
-            searchbar = searchbar.toLowerCase();
-            // var active=document.getElementsByClassName('active');
-
-            var x = document.getElementsByClassName("i1");
-
-            for (var i = 0; i < x.length; i++) {
-
-                if (!x[i].innerHTML.toLowerCase().includes(searchbar)) {
-                    x[i].style.display = "none";
-                    x[i].classList.add('active');
-                }
-
-                else {
-                    x[i].style.display = "block";
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("topics");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
                 }
             }
         }
 
 
+        //adding active class
+        var topics = document.getElementById("topics");
+        var btns = topics.getElementsByClassName("item");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
 
     </script>
 
