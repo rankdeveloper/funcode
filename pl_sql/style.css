@@ -58,12 +58,12 @@
 }
 
 .code {
-    background-color: black;
+    background-color: #dddddd;
     margin-bottom: 5px;
     word-spacing: 5px;
     line-height: 1.5rem;
     padding: 10px;
-    color: white;
+    color: black;
     font-family: arial;
     border-radius: 5px;
 }
@@ -95,7 +95,8 @@
 
 .btns {
     float: right;
-    background-color: #ffa500;
+    background-color: #2c3e50;
+    color:white;
     cursor: pointer;
     border-radius: 5px;
     outline: none;
@@ -111,7 +112,7 @@
 }
 
 .output {
-    border: 2px solid skyblue;
+    border: 2px solid #dddddd;
     /*   border:1px solid blue; */
     margin-bottom: 5px;
     word-spacing: 5px;

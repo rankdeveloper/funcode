@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./side-bar_content.css">
 
-
+<style>
+    h5 a{
+        text-decoration: none;
+        color:black;
+    }
+</style>
 </head>
 
 <body>
@@ -30,8 +35,16 @@
                     <li><a href="#intro" class="item">Introduction</a></li>
                     <li><a href="#advantages" class="item">advantages of plsql</a></li>
                     <li><a href="#blocks" class="item">block structure</a></li>
+                    <li><a href="#data_types" class="item">data types</a></li>
+                    <li><a href="#variable" class="item">declaring variables</a></li>
+                    <li><a href="#constant" class="item">constant</a></li>
+                    <li><a href="#operator_precedence" class="item">operator precedence</a></li>
+                    <li><a href="#iterative_control" class="item">conditional and iterative_control</a></li>
+                    <li><a href="#cursor" class="item">cursor</a></li>
+                    <li><a href="#exception" class="item">exception handling</a></li>
+
                     <li><a href="#" class="item">...</a></li>
-                    
+
 
                 </ul>
 
@@ -85,16 +98,792 @@
 
             <!--   sql syntax rules -->
             <div class="one" id="blocks">
-                <h2>SQL Syntax rules</h2>
+                <h2>BLOCK STRUCTURE</h2>
                 <hr>
-                <p>The basic program unit in PL/SQL is the block. A PL/SQL block is defined by the keywords DECLARE,
-                    BEGIN, EXCEPTION, and END. These keywords partition the block into a declarative part, an executable
-                    part, and an exception-handling part. Only the executable part is required. You can nest a block
-                    within another block wherever you can place an executable statement.</p>
+                <p>PL/SQL is a block-structured language whose code is organized into blocks. A PL/SQL block consists of
+                    three sections: declaration, executable, and exception-handling sections. In a block, the executable
+                    section is mandatory while the declaration and exception-handling sections are optional.<br><br>
+
+                    A PL/SQL block has a name. Functions or Procedures is an example of a named block. A named block is
+                    stored into the Oracle Database server and can be reused later.<br><br>
+
+                    A block without a name is an anonymous block. An anonymous block is not saved in the Oracle Database
+                    server, so it is just for one-time use. However, PL/SQL anonymous blocks can be useful for testing
+                    purposes.</p>
+                <h4>Syntax</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>&emsp;declaration section<br>begin<br>
+                        &emsp;exception execution<br>exception &emsp;<br>exception section<br>end;</p>
+                </div>
             </div>
             <!--   end blocks -->
             <br><br>
+
+
+            <div class="one" id="data_types">
+                <h2>Data types</h2>
+                <hr>
+                <p>Each value in PL/SQL such as a constant, variable and parameter has a data type that determines the
+                    storage format, valid values, and allowed operations.<br>
+
+                    PL/SQL has two kinds of data types: scalar and composite. The scalar types are types that store
+                    single values such as number, Boolean, character, and datetime whereas the composite types are types
+                    that store multiple values, for example, record and collection.
+
+                    <br><br>This tutorial explains the scalar data types that store values with no internal components.
+                </p>
+                <h4></h4>
+                <div class="output">
+                    <table>
+                        <tr>
+                            <th>Data type</th>
+                            <th>Synonyms</th>
+                        </tr>
+                        <tr>
+                            <td>NUMBER</td>
+                            <td>DEC, DECIMAL, DOUBLE PRECISION, FLOAT, INTEGER, INT, NUMERIC, REAL, SMALLINT</td>
+                        </tr>
+
+                        <tr>
+                            <td>CHAR</td>
+                            <td>CHARACTER, STRING</td>
+                        </tr>
+
+                        <tr>
+                            <td>VARCHAR2</td>
+                            <td>VARCHAR</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
+
+            <div class="one" id="variable">
+                <h2>declaring variables</h2>
+                <hr>
+                <p>In PL/SQL, a variable is named storage location that stores a value of a particular data type. The
+                    value of the variable changes through the program. Before using a variable, you must declare it in
+                    the declaration section of a block.</p>
+                <h4>Syntax</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>variable_name datatype [NOT NULL] [:= initial_value];</p>
+                </div>
+
+                <h4>Default Values</h4>
+                <p>PL/SQL allows you to set a default value for a variable at the declaration time. To assign a default
+                    value to a variable, you use the assignment operator (:=) or the DEFAULT keyword.</p>
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>DECLARE<br>
+                        l_product_name VARCHAR2( 100 ) DEFAULT 'Laptop';<br>
+                        BEGIN<br>
+                        NULL;<br>
+                        END;</p>
+                </div>
+                <H4>NOT NULL CONSTRAINT</H4>
+                <P>If you impose the NOT NULL constraint on a value, then the variable cannot accept a NULL value.
+                    Besides, a variable declared with the NOT NULL must be initialized with a non-null value. Note that
+                    PL/SQL treats a zero-length string as a NULL value.<BR><BR>
+
+
+                    The following example first declares a variable named l_shipping_status with the NOT NULL
+                    constraint. Then, it assigns the variable a zero-length string.</P>
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>DECLARE<br><br>
+                        l_shipping_status VARCHAR2( 25 ) NOT NULL := 'Shipped';<br>
+                        BEGIN<br><br>
+                        l_shipping_status := '';<br>
+                        END;</p>
+                </div>
+
+                <h4>VARIABLE ASSIGNMENT</h4>
+                <p>To assign a value to a variable, you use the assignment operator (:=)</p>
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>DECLARE<br><br>
+                        l_customer_group VARCHAR2(100) := 'Silver';<br>
+                        BEGIN<br>
+                        l_customer_group := 'Gold';<br>
+                        DBMS_OUTPUT.PUT_LINE(l_customer_group);<br><br>
+                        END;</p>
+                </div>
+
+                <h4>Anchored declarations</h4>
+                <p>Typically, you declare a variable and select a value from a table column to this variable. If the
+                    data type of the table column changes, you must adjust the program to make it work with the new
+                    type.<br><br>
+                    PL/SQL allows you to declare a variable whose data type anchor to a table column or another
+                    variable. Consider the following example:</p>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>DECLARE<br><br>
+                        emp_name employee.name%TYPE;<br>
+                        emp_salary employee.salary%TYPE;<br><br>
+                        BEGIN<br>
+                        SELECT<br>
+                        name, salary<br>
+                        INTO<br>
+                        emp_name, emp_salary<br>
+                        FROM<br>
+                        employee<br>
+                        WHERE<br>
+                        id = 3;<br>
+
+                        DBMS_OUTPUT.PUT_LINE(emp_name || ':' || emp_salary );<br><br>
+                        END;</p>
+                </div>
+
+                <ul>
+                    <li>First, declare two variables <b>emp_name</b> and <b>emp_salary</b> whose data type anchors to
+                        the name and salary columns respectively, in the declaration section of the block.</li>
+                    <li>Second, query employee name and salary of the employee id 3 and assign these column values to
+                        the emp_name and salary variables in the execution block.</li>
+                </ul>
+
+
+                <h4>OUTPUT</h4>
+                <div class="output">
+                    <p>Kumar:9000</p>
+                </div>
+
+            </div>
+            <!-- variable end -->
+
+            <!-- constant -->
+            <div class="one" id="constant">
+                <h2>constant</h2>
+                <hr>
+                <p>Unlike a variable, a constant holds a value that does not change throughout the execution of the
+                    program.<br>
+
+                    Constants make your code more readable.</p>
+                <h4>Syntax</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>constant_name CONSTANT datatype [NOT NULL] := expression;</p>
+                </div>
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>DECLARE <br><br>
+                        co_pi CONSTANT REAL := 3.14159;<br>
+                        co_radius CONSTANT REAL := 10;<br>
+                        co_area CONSTANT REAL := (co_pi * co_radius**2);<br>
+
+                        BEGIN<br>
+                        DBMS_OUTPUT.PUT_LINE(co_area);<br><br>
+                        END;</p>
+                </div>
+                <h4>Output</h4>
+                <div class="output">
+                    <p>314.159</p>
+                </div>
+
+            </div>
+
+            <!-- constant end -->
+
+
+            <!-- Operator Precedence -->
+            <div class="one" id="operator_precedence">
+                <h2>Operator Precedence</h2>
+                <hr>
+                <p>This term determines the grouping of the terms in an expression. This shows how an expression is
+                    evaluated. Certain operators will have higher precedence than others, like Multiplication operator
+                    has higher precedence than the addition operator.</p>
+
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>declare<br><br>
+                        Y number:= 5 + 2 * 3;<br>
+
+                        begin<br>
+                        DBMS_OUTPUT.PUT_LINE(Y);<br><br>
+                        END;</p>
+                </div>
+                <h4>Output</h4>
+                <div class="output">
+                    <p>11</p>
+                </div>
+
+                <p>In the above equation Y is assigned 11, not 21. Since, * has higher precedence than +. So, it first
+                    gets multiplied with 2*3 and then adds into 5.<br><br>
+
+                    However, operators with the highest precedence appear at the top of the table, those with the lowest
+                    precedence appear at the bottom. And then within the expression, higher precedence operators will be
+                    evaluated first.<br><br>
+
+                    The precedence of the operators goes like as follow: =, <,>, <=,>=, <>, !=, ~=, ^=, IS NULL, LIKE,
+                                BETWEEN, IN</p>
+
+                <div class="output">
+                    <table>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Operation</th>
+                        </tr>
+
+                        <tr>
+                            <td>**</td>
+                            <td>Exponentiation</td>
+                        </tr>
+
+                        <tr>
+                            <td>+,-</td>
+                            <td>Identity, negation</td>
+                        </tr>
+
+                        <tr>
+                            <td>+,-,||</td>
+                            <td>Addition, subtraction, concatenation</td>
+                        </tr>
+
+                        <tr>
+                            <td>NOT</td>
+                            <td>Logical negation</td>
+                        </tr>
+
+                        <tr>
+                            <td>AND</td>
+                            <td>conjunction</td>
+                        </tr>
+
+                        <tr>
+                            <td>OR</td>
+                            <td>inclusion</td>
+                        </tr>
+
+
+                    </table>
+                </div>
+            </div>
+            <!-- Operator Precedence end -->
+
+
+            <!-- Conditional and Iterative Control -->
+            <div class="one" id="iterative_control">
+                <h2>Conditional and Iterative Control</h2>
+                <hr>
+                <p>PL/SQL Iterative control statements allow a programmer to execute a set of statements multiple times.
+                    All iterative statements must have a conditional statement to check whether to continue to execute
+                    the block of statement another time.</p>
+
+                <ul>
+                    <li>Simple loop</li>
+                    <li>While loop</li>
+                    <li>For loop</li>
+                </ul>
+
+                <h4>Additional Statements used with PL/SQL Iterative Control Statements</h4>
+                <ul>
+                    <li>exit</li>
+                    <li>exit when</li>
+                    <li>continue</li>
+                </ul>
+
+                <h4>Simple loop</h4>
+                <p>The simple loop is infinite. The loop keeps on executing the enclosed statements infinitely. Simple
+                    loop needs an exit condition and exit statement to terminate.</p>
+
+                <h4>Syntax</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>LOOP<br>
+
+                        Loop statements<br>
+
+                        Conditional exit using EXIT|EXIT WHEN<br>
+
+                        END LOOP;</p>
+                </div>
+
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>DECLARE<br><br>
+                        num NUMBER:=1;<br>
+                        BEGIN<br>
+                        LOOP<br>
+                        DBMS_OUTPUT.PUT_LINE('Number = '||num);<br>
+                        num:=num+1;<br>
+                        IF num>3 THEN<br>
+                        EXIT;<br>
+                        END IF; <br>
+                        END LOOP;<br><br>
+                        END;</p>
+                </div>
+
+                <h4>Output</h4>
+                <div class="output">
+                    <table>
+                        <tr>
+                            <td>Number = 1</td>
+                        </tr>
+                        <tr>
+                            <td>Number = 2</td>
+                        </tr>
+                        <tr>
+                            <td>Number = 3</td>
+                        </tr>
+
+
+                    </table>
+                </div>
+
+                <!-- while loop  -->
+                <h4>WHILE loop</h4>
+                <p>WHILE loop is not infinite. The condition of termination is defined after WHILE and before LOOP
+                    keywords. Between WHILE LOOP and END LOOP the set of statements can be given. These statements are
+                    executed as long as the condition in WHILE is true.<br><br>
+
+                    After every iteration or execution of block of statements control returns to WHILE. If the condition
+                    is true, next iteration is initiated. If this condition is false, control is passed to statement
+                    after END LOOP;</p>
+
+                <h4>Syntax</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>WHILE condition expression LOOP<br>
+
+                        Loop statements<br>
+
+                        [CONTINUE| EXIT|EXIT WHEN with condition]<br>
+
+                        END LOOP;</p>
+                </div>
+
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>DECLARE<br>
+                        num NUMBER:=1;<br>
+                        BEGIN<br>
+                        WHILE num<=3 LOOP<br>
+                            DBMS_OUTPUT.PUT_LINE('Number = '||num);<br>
+                            num:=num+1;<br>
+                            END LOOP;<br>
+                            END;</p>
+                </div>
+
+                <h4>Output</h4>
+                <div class="output">
+                    <table>
+                        <tr>
+                            <td>Number = 1</td>
+                        </tr>
+                        <tr>
+                            <td>Number = 2</td>
+                        </tr>
+                        <tr>
+                            <td>Number = 3</td>
+                        </tr>
+
+
+                    </table>
+                </div>
+                <!-- while loop end -->
+
+                <!-- for loop -->
+                <h4>FOR loop</h4>
+                <p>FOR Loop is not infinite. In the FOR loop header a counter variable is used which is compared between
+                    Lower Bound and Upper Bound values. The variable is initialized to the Lower bound value and is
+                    incremented with iterations. The statements block is executed as long as variable’s value remains
+                    less than or equal to upper bound value.</p>
+
+                <h4>Syntax</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>FOR counter-variable IN Lower Bound.. Upper Bound LOOP<br>
+
+                        Loop statements<br>
+
+                        [CONTINUE| EXIT|EXIT WHEN with condition]<br>
+
+                        END LOOP;</p>
+                </div>
+
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>DECLARE<br>
+                        num NUMBER :=1;<br>
+                        BEGIN<br><br>
+
+                        FOR i IN num .. 3 LOOP<br>
+                        DBMS_OUTPUT.PUT_LINE ('Number = '||i);<br>
+                        END LOOP;<br><br>
+                        END;</p>
+                </div>
+
+                <h4>Output</h4>
+                <div class="output">
+                    <table>
+                        <tr>
+                            <td>Number = 1</td>
+                        </tr>
+                        <tr>
+                            <td>Number = 2</td>
+                        </tr>
+                        <tr>
+                            <td>Number = 3</td>
+                        </tr>
+
+
+                    </table>
+                </div>
+
+                <!-- for loop end -->
+
+
+            </div>
+            <!-- Conditional and Iterative Control end-->
+
+            <div class="one" id="cursor">
+                <h2>CURSOR</h2>
+                <hr>
+                <p>A cursor is a pointer to this context area. PL/SQL controls the context area through a cursor. A
+                    cursor holds the rows (one or more) returned by a SQL statement. The set of rows the cursor holds is
+                    referred to as the active set.<br><br>
+
+                    You can name a cursor so that it could be referred to in a program to fetch and process the rows
+                    returned by the SQL statement, one at a time. There are two types of cursors : </p>
+                <ul>
+                    <li>Implicit cursor</li>
+                    <li>Explicit cursor</li>
+                </ul>
+
+                <h4>Implicit cursor</h4>
+                <p>Implicit cursors are automatically created by Oracle whenever an SQL statement is executed, when
+                    there is no explicit cursor for the statement. Programmers cannot control the implicit cursors and
+                    the information in it.<br><br>
+
+                    Whenever a DML statement (INSERT, UPDATE and DELETE) is issued, an implicit cursor is associated
+                    with this statement. For INSERT operations, the cursor holds the data that needs to be inserted. For
+                    UPDATE and DELETE operations, the cursor identifies the rows that would be affected.</p>
+
+                <div class="output">
+                    <table>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Description</th>
+                        </tr>
+
+                        <tr>
+                            <td>%FOUND</td>
+                            <td>Returns TRUE if an INSERT, UPDATE, or DELETE statement affected one or more rows or a
+                                SELECT INTO statement returned one or more rows. Otherwise, it returns FALSE.</td>
+                        </tr>
+
+                        <tr>
+                            <td>%NOTFOUND</td>
+                            <td>The logical opposite of %FOUND. It returns TRUE if an INSERT, UPDATE, or DELETE
+                                statement affected no rows, or a SELECT INTO statement returned no rows. Otherwise, it
+                                returns FALSE.</td>
+                        </tr>
+
+                        <tr>
+                            <td>%ISOPEN</td>
+                            <td>Always returns FALSE for implicit cursors, because Oracle closes the SQL cursor
+                                automatically after executing its associated SQL statement.</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                %ROWCOUNT</td>
+                            <td>Returns the number of rows affected by an INSERT, UPDATE, or DELETE statement, or
+                                returned by a SELECT INTO statement.</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h4>Employee table</h4>
+                <div class="output">
+                    <table>
+                        <tr>
+                            <th>id</th>
+                            <th>name</th>
+                            <th>salary</th>
+                        </tr>
+
+                        <tr>
+                            <th>1</th>
+                            <th>Rohit</th>
+                            <th>5000</th>
+                        </tr>
+
+
+                        <tr>
+                            <th>2</th>
+                            <th>Gill</th>
+                            <th>4000</th>
+                        </tr>
+
+                        <tr>
+                            <th>3</th>
+                            <th>Kumar</th>
+                            <th>9000</th>
+                        </tr>
+
+
+                    </table>
+                </div>
+
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>DECLARE<br>  
+                        total_rows number(2);<br>
+                     BEGIN <br>
+                        UPDATE employee<br> 
+                        SET salary = salary + 1000;<br> 
+                        IF sql%notfound THEN<br>
+                           dbms_output.put_line('employee not found');<br> 
+                        ELSIF sql%found THEN<br>
+                           total_rows := sql%rowcount;<br>
+                           dbms_output.put_line( total_rows || ' updated ');<br> 
+                        END IF;<br>  
+                     END;</p>
+                </div>
+                <p>When the above code is executed at the SQL prompt, it produces the following result −</p>
+                <div class="output">
+                    <p>3 customers selected<br>  
+
+                        PL/SQL procedure successfully completed.</p>
+                </div>
+
+                <br>
+                <p>If you check the records in employee table, you will find that the rows have been updated</p>
+
+                <h4>Output</h4>
+                <div class="output">
+                    <table>
+                        <tr>
+                            <th>id</th>
+                            <th>name</th>
+                            <th>salary</th>
+                        </tr>
+
+                        <tr>
+                            <th>1</th>
+                            <th>Rohit</th>
+                            <th>6000</th>
+                        </tr>
+
+
+                        <tr>
+                            <th>2</th>
+                            <th>Gill</th>
+                            <th>5000</th>
+                        </tr>
+
+                        <tr>
+                            <th>3</th>
+                            <th>Kumar</th>
+                            <th>10000</th>
+                        </tr>
+
+
+                    </table>
+                </div>
+
+
+                <h2>Explicit cursor</h2><hr>
+                <p>Explicit cursors are programmer-defined cursors for gaining more control over the context area. An explicit cursor should be defined in the declaration section of the PL/SQL Block. It is created on a SELECT Statement which returns more than one row.</p>
+                <h4>Syntax for creating an explicit cursor :</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>CURSOR cursor_name IS select_statement;</p>
+                </div>
+
+                <h4>Working with an explicit cursor includes the following steps : </h4>
+                <ul>
+                    <li>Declaring the cursor for initializing the memory</li>
+                    <li>Opening the cursor for allocating the memory</li>
+                    <li>Fetching the cursor for retrieving the data</li>
+                    <li>Closing the cursor to release the allocated memory</li>
+                </ul>
+
+                <h4>Declaring the Cursor</h4>
+                <p>Declaring the cursor defines the cursor with a name and the associated SELECT statement.</p>
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>CURSOR emp_employee IS <br>
+                        SELECT id, name, salary FROM employee; </p>
+                </div>
+
+                <h4>Opening the Cursor</h4>
+                <p>Opening the cursor allocates the memory for the cursor and makes it ready for fetching the rows returned by the SQL statement into it.</p>
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>CURSOR emp_employee IS <br>
+                        SELECT id, name, salary FROM employee; </p>
+                </div>
+
+
+                <h4>Fetching the Cursor</h4>
+                <p>Fetching the cursor involves accessing one row at a time. </p>
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>FETCH emp_employee INTO emp_id, emp_name, emp_salary; </p>
+                </div>
+
+                <h4>Closing the Cursor</h4>
+                <p>Closing the cursor means releasing the allocated memory.</p>
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>CLOSE emp_employee;</p>
+                </div>
+
+                <h4>Complete example  of Explicit Cursor </h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p>DECLARE <br>
+                        emp_id employee.id%type; <br>
+                        emp_name employee.name%type; <br>
+                        emp_salary employee.salary%type; <br>
+                        CURSOR emp_employee is<br> 
+                           SELECT id, name, salary FROM employee; <br><br>
+                     BEGIN<br> 
+                        OPEN emp_employee; <br>
+                        LOOP <br>
+                        FETCH emp_employee into emp_id, emp_name, emp_salary;<br> 
+                           EXIT WHEN emp_employee%notfound;<br> 
+                           dbms_output.put_line(emp_id || ' ' || emp_name || ' ' || emp_salary);<br> 
+                        END LOOP; <br>
+                        CLOSE emp_employee;<br><br> 
+                     END;</p>
+                </div>
+
+                <h4>Output</h4>
+                <div class="output">
+                    <p>1	Rohit	5000<br>
+                        2	Gill	4000<br>
+                        3	Kumar	9000</p><br>
+                </div>
+
+            </div>
+
+            <div class="one" id="exception">
+                <h2>Exception</h2><hr>
+                <p>Exceptions in PL/SQL. An exception is an error condition during a program execution. PL/SQL supports programmers to catch such conditions using EXCEPTION block in the program and an appropriate action is taken against the error condition.
+                    <br><br> There are two types of exceptions : </p>
+                    <ul>
+                        <li>system-defined exceptions</li>
+                        <li>user-defined exceptions</li>
+                    </ul>
+
+                    <h4>Syntax</h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p>DECLARE<br>
+                            declarations section<br>
+                         BEGIN <br>
+                            executable command(s)<br><br> 
+                         EXCEPTION <br>
+                            exception handling goes here<br> 
+                            WHEN exception1 THEN<br> 
+                               exception1-handling-statements<br>  
+                            WHEN exception2  THEN<br>  
+                               exception2-handling-statements<br>  
+                            ........ <br>
+                            WHEN others THEN<br> 
+                               exception3-handling-statements<br><br>
+                         END;</p>
+                    </div>
+
+                    <h4>Example</h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p>DECLARE<br> 
+                            emp_id employee.id%type;<br> 
+                            emp_name employee.name%type :='Sammy';<br> 
+                            emp_salary employee.salary%type;<br><br> 
+                         BEGIN <br>
+                            SELECT  name, salary INTO  emp_name, emp_salary<br> 
+                            FROM employee <br>
+                            WHERE id = emp_id;  <br>
+                            DBMS_OUTPUT.PUT_LINE ('Name: '||  emp_name);<br> 
+                            DBMS_OUTPUT.PUT_LINE ('salary: ' || emp_salary); <br><br>
+                         
+                         EXCEPTION <br>
+                            WHEN no_data_found THEN<br> 
+                               dbms_output.put_line('employee not found');<br> 
+                            WHEN others THEN <br>
+                               dbms_output.put_line('Error!');<br><br> 
+                         END;</p>
+                    </div>
+
+                    <h4>Output</h4>
+                    <div class="output">
+                        <p>employee not found <br> 
+
+                            PL/SQL procedure successfully completed.</p>
+                    </div>
+
+                    <h2>User-defined Exceptions</h2><hr>
+                    <p>PL/SQL allows you to define your own exceptions according to the need of your program. A user-defined exception must be declared and then raised explicitly, using either a RAISE statement or the procedure DBMS_STANDARD.RAISE_APPLICATION_ERROR.</p>
+                    <h4>Syntax</h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p>DECLARE <br>
+                            exception_name EXCEPTION;</p>
+                    </div>
+                    <h4>Example</h4>
+                    <div class="code">
+                        <button class="btns">Copy</button>
+                        <p>DECLARE 
+                            emp_id customers.id%type := &cemp_id;<br> 
+                            emp_name customerS.Name%type; <br>
+                            emp_salary customers.salary%type;  <br>
+                            -- user defined exception <br>
+                            ex_invalid_id  EXCEPTION; <br><br>
+                         BEGIN <br>
+                            IF emp_id <= 0 THEN <br>
+                               RAISE ex_invalid_id; <br>
+                            ELSE <br>
+                               SELECT  name, salary INTO  emp_name, emp_salary <br>
+                               FROM customers <br>
+                               WHERE id = emp_id;<br>
+                               DBMS_OUTPUT.PUT_LINE ('Name: '||  emp_name); <br> 
+                               DBMS_OUTPUT.PUT_LINE ('salary: ' || emp_salary); <br>
+                            END IF; <br><br>
+                         
+                         EXCEPTION <br>
+                            WHEN ex_invalid_id THEN <br>
+                               dbms_output.put_line('id must be greater than zero!');<br> 
+                            WHEN no_data_found THEN <br>
+                               dbms_output.put_line('employee not found'); <br>
+                            WHEN others THEN <br>
+                               dbms_output.put_line('Error!'); <br> <br>
+                         END;</p>
+                    </div>
+
+                    <h4>Output</h4>
+                    <div class="output">
+                        <p>Enter value for cemp_id: -6 (let's enter a value -6) <br>
+                            old  2: emp_id customers.id%type := &cemp_id; <br>
+                            new  2: emp_id customers.id%type := -6; <br>
+                            id must be greater than zero! <br><br>
+                             
+                            PL/SQL procedure successfully completed.</p>
+                    </div>
+
+
+
+            </div>
+
+        </div>
+        <!-- main content end -->
 
     </div>
 
