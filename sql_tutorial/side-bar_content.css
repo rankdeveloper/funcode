@@ -37,9 +37,12 @@
 }
 .flex h1{
     font-size: 3rem;
+    color: #2c3e50;
 }
-.flex h5{
+.flex h5 a{
     text-transform: uppercase;
+    color: #2c3e50;
+    text-decoration: none;
 }
 
 .searchbar{
