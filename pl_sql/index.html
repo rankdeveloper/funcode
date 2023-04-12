@@ -1,0 +1,152 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PL/SQL-tutorial</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./side-bar_content.css">
+
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="sidebar">
+            <div class="flex">
+
+                <h1>PL/SQL</h1>
+
+
+                <h5><a href="../index.html">GO HOME</a></h5>
+            </div>
+            <div class="searchbar">
+                <input type="text" onkeyup="search()" id="search" placeholder="Enter to search">
+            </div>
+
+            <div class="topics">
+                <ul id="topic">
+                    <li><a href="#intro" class="item">Introduction</a></li>
+                    <li><a href="#advantages" class="item">advantages of plsql</a></li>
+                    <li><a href="#blocks" class="item">block structure</a></li>
+                    <li><a href="#" class="item">...</a></li>
+                    
+
+                </ul>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="main-content">
+            <!-- <a href="#bottom">Bottom</a> -->
+            <!--   introduction to sql -->
+            <div class="one">
+                <h2 id="intro">Introduction to pl/sql</h2>
+                <hr>
+                <p>PL/SQL is a procedural language designed specifically to embrace SQL statements within its syntax.
+                    PL/SQL program units are compiled by the Oracle Database server and stored inside the database. And
+                    at run-time, both PL/SQL and SQL run within the same server process, bringing optimal efficiency.
+                    PL/SQL automatically inherits the robustness, security, and portability of the Oracle
+                    Database.<br><br>
+                    PL/SQL is a powerful, yet straightforward database programming language. It is easy to both write
+                    and read, and comes packed with lots of out-of-the-box optimizations and security features. </p>
+
+            </div>
+            <!--   end introduction to sql -->
+
+            <!--   what sql can do -->
+            <div class="one" id="advantage">
+                <h2>advantages of plsql</h2>
+                <hr>
+
+                <ul>
+                    <li>It is a <b>standard database language</b> and PL/SQL is strongly integrated with SQL. PL/SQL
+                        supports both static and also dynamic SQL. Static SQL is said to support DML operations and also
+                        the transaction control from PL/SQL block. In dynamic SQL, SQL allows embedding the DDL
+                        statements in the PL/SQL blocks. </li>
+                    <li>Also, It then allows sending an entire block of statements to the database at one time. It
+                        reduces network traffic and also provides high performance for the applications. </li>
+                    <li>It gives high productivity to programmers as it can query, transform and also update the data in
+                        the database. </li>
+                    <li>This is said to save time on the design and also the debugging by strong features, like the
+                        exception handling, encapsulation, data hiding and also object-oriented data types.</li>
+                    <li>Applications that are written in PL/SQL languages are portable.</li>
+                    <li>This provides high security level.</li>
+                    <li>It also provides access to the predefined SQL packages.</li>
+                    <li>It also supports for Object-oriented programming. </li>
+                    <li>It provides support for developing web applications and server pages.</li>
+                </ul>
+            </div>
+            <!--   end sql can do -->
+
+            <!--   sql syntax rules -->
+            <div class="one" id="blocks">
+                <h2>SQL Syntax rules</h2>
+                <hr>
+                <p>The basic program unit in PL/SQL is the block. A PL/SQL block is defined by the keywords DECLARE,
+                    BEGIN, EXCEPTION, and END. These keywords partition the block into a declarative part, an executable
+                    part, and an exception-handling part. Only the executable part is required. You can nest a block
+                    within another block wherever you can place an executable statement.</p>
+            </div>
+            <!--   end blocks -->
+            <br><br>
+            </div>
+
+    </div>
+
+    <script>
+        const btns = document.querySelectorAll('.btns')
+        btns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const txt = btn.nextElementSibling.innerText;
+                btn.innerHTML = "Copied";
+                setTimeout(() => {
+                    btn.innerHTML = "Copy";
+                }, 2000)
+                copyToClipboard(txt)
+            })
+        })
+
+        function copyToClipboard(txt) {
+            navigator.clipboard.writeText(txt)
+                .then(() => console.log(`${txt} was copied...`))
+                .catch((e) => console.log('Copy failed ${e}'))
+        }
+
+
+
+        function search() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("topic");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+        var topics = document.getElementById("topics");
+        var btn = topics.getElementsByClassName("item");
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>
