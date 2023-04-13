@@ -40,12 +40,12 @@
 }
 
 .one ol li .highlight {
-    color: #ffa500;
+    color: #2c3e50;
 }
 
 .one p .highlight,
 .one ul li span {
-    color: #ffa500;
+    color: #2c3e50;
 }
 
 .one h2 {
@@ -90,7 +90,8 @@
 
 
 .code p span {
-    color: #ffa500;
+    color: #2c3e50;
+    font-weight: bold;
 }
 
 .btns {
