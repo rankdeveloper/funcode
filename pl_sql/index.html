@@ -7,13 +7,14 @@
     <title>PL/SQL-tutorial</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./side-bar_content.css">
-
-<style>
-    h5 a{
-        text-decoration: none;
-        color:black;
-    }
-</style>
+    <title>FUNCODE - PL/SQL</title>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <style>
+        h5 a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -43,7 +44,7 @@
                     <li><a href="#cursor" class="item">cursor</a></li>
                     <li><a href="#exception" class="item">exception handling</a></li>
 
-                    <li><a href="#" class="item">...</a></li>
+                    <li><a href="#triggers" class="item">triggers</a></li>
 
 
                 </ul>
@@ -60,12 +61,14 @@
             <div class="one">
                 <h2 id="intro">Introduction to pl/sql</h2>
                 <hr>
-                <p>PL/SQL is a procedural language designed specifically to embrace SQL statements within its syntax.
+                <p>PL/SQL is a <b>procedural language</b> designed specifically to embrace SQL statements within its
+                    syntax.
                     PL/SQL program units are compiled by the Oracle Database server and stored inside the database. And
                     at run-time, both PL/SQL and SQL run within the same server process, bringing optimal efficiency.
                     PL/SQL automatically inherits the robustness, security, and portability of the Oracle
                     Database.<br><br>
-                    PL/SQL is a powerful, yet straightforward database programming language. It is easy to both write
+                    PL/SQL is a <B>powerful</B>, yet straightforward database programming language. It is easy to both
+                    write
                     and read, and comes packed with lots of out-of-the-box optimizations and security features. </p>
 
             </div>
@@ -81,17 +84,20 @@
                         supports both static and also dynamic SQL. Static SQL is said to support DML operations and also
                         the transaction control from PL/SQL block. In dynamic SQL, SQL allows embedding the DDL
                         statements in the PL/SQL blocks. </li>
-                    <li>Also, It then allows sending an entire block of statements to the database at one time. It
-                        reduces network traffic and also provides high performance for the applications. </li>
-                    <li>It gives high productivity to programmers as it can query, transform and also update the data in
+                    <li>Also, It then allows <b>sending an entire block of statements</b> to the database at <b>one
+                            time</b>. It
+                        reduces network traffic and also provides <b>high performance</b> for the applications. </li>
+                    <li>It gives high <b>productivity</b> to programmers as it can query, transform and also update the
+                        data in
                         the database. </li>
-                    <li>This is said to save time on the design and also the debugging by strong features, like the
+                    <li>This is said to <b>save time on the design</b> and also the <b>debugging</b> by strong features,
+                        like the
                         exception handling, encapsulation, data hiding and also object-oriented data types.</li>
-                    <li>Applications that are written in PL/SQL languages are portable.</li>
-                    <li>This provides high security level.</li>
+                    <li>Applications that are written in PL/SQL languages are <b>portable</b>.</li>
+                    <li>This provides high <b>security</b> level.</li>
                     <li>It also provides access to the predefined SQL packages.</li>
-                    <li>It also supports for Object-oriented programming. </li>
-                    <li>It provides support for developing web applications and server pages.</li>
+                    <li>It also supports for <b>Object-oriented programming.</b> </li>
+                    <li>It provides support for developing <b>web applications</b> and <b>server pages</b>.</li>
                 </ul>
             </div>
             <!--   end sql can do -->
@@ -113,9 +119,30 @@
                 <h4>Syntax</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>&emsp;declaration section<br>begin<br>
-                        &emsp;exception execution<br>exception &emsp;<br>exception section<br>end;</p>
+                    <p>declaration section<br><span class="reserved">BEGIN</span><br>
+                        exception execution<br><span class="reserved">EXCEPTION</span><br>exception section<br><span
+                            class="reserved">END</span>;</p>
                 </div>
+
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p><span class="reserved">DECLARE</span><br>
+                        message VARCHAR(255) : = 'HELLO DEVELOPER';<br>
+                        <span class="reserved">BEGIN</span><br>
+                        DBMS_OUTPUT.PUT_LINE(message);<br>
+
+                        <span class="reserved">END;</span>
+                    </p>
+                </div>
+
+                <h4>Output</h4>
+                <div class="output">
+                    <p>HELLO DEVELOPER</p>
+                </div>
+
+
+
             </div>
             <!--   end blocks -->
             <br><br>
@@ -127,7 +154,8 @@
                 <p>Each value in PL/SQL such as a constant, variable and parameter has a data type that determines the
                     storage format, valid values, and allowed operations.<br>
 
-                    PL/SQL has two kinds of data types: scalar and composite. The scalar types are types that store
+                    PL/SQL has two kinds of data types: <b>scalar</b> and <b>composite</b>. The scalar types are types
+                    that store
                     single values such as number, Boolean, character, and datetime whereas the composite types are types
                     that store multiple values, for example, record and collection.
 
@@ -167,7 +195,7 @@
                 <h4>Syntax</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>variable_name datatype [NOT NULL] [:= initial_value];</p>
+                    <p>variable_name <span class="reserved">dataType</span> [NOT NULL] [:= initial_value];</p>
                 </div>
 
                 <h4>Default Values</h4>
@@ -176,11 +204,13 @@
                 <h4>Example</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>DECLARE<br>
-                        l_product_name VARCHAR2( 100 ) DEFAULT 'Laptop';<br>
-                        BEGIN<br>
+                    <p><span class="reserved">DECLARE</span><br>
+                        l_product_name <span class="reserved">VARCHAR2</span>( 100 ) <span
+                            class="reserved">DEFAULT</span> 'Laptop';<br>
+                        <span class="reserved">BEGIN</span><br>
                         NULL;<br>
-                        END;</p>
+                        <span class="reserved">END</span>;
+                    </p>
                 </div>
                 <H4>NOT NULL CONSTRAINT</H4>
                 <P>If you impose the NOT NULL constraint on a value, then the variable cannot accept a NULL value.
@@ -193,11 +223,13 @@
                 <h4>Example</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>DECLARE<br><br>
-                        l_shipping_status VARCHAR2( 25 ) NOT NULL := 'Shipped';<br>
-                        BEGIN<br><br>
+                    <p><span class="reserved">DECLARE</span><br><br>
+                        l_shipping_status <span class="reserved">VARCHAR2</span>( 25 ) <span class="reserved">NOT
+                            NULL</span> := 'Shipped';<br>
+                        <span class="reserved">BEGIN</span><br><br>
                         l_shipping_status := '';<br>
-                        END;</p>
+                        <span class="reserved">END</span>;
+                    </p>
                 </div>
 
                 <h4>VARIABLE ASSIGNMENT</h4>
@@ -205,12 +237,13 @@
                 <h4>Example</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>DECLARE<br><br>
-                        l_customer_group VARCHAR2(100) := 'Silver';<br>
-                        BEGIN<br>
+                    <p><span class="reserved">DECLARE</span><br><br>
+                        l_customer_group <span class="reserved">VARCHAR2</span>(100) := 'Silver';<br>
+                        <span class="reserved">BEGIN</span><br>
                         l_customer_group := 'Gold';<br>
                         DBMS_OUTPUT.PUT_LINE(l_customer_group);<br><br>
-                        END;</p>
+                        <span class="reserved">END</span>;
+                    </p>
                 </div>
 
                 <h4>Anchored declarations</h4>
@@ -221,10 +254,10 @@
                     variable. Consider the following example:</p>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>DECLARE<br><br>
+                    <p><span class="reserved">DECLARE</span><br><br>
                         emp_name employee.name%TYPE;<br>
                         emp_salary employee.salary%TYPE;<br><br>
-                        BEGIN<br>
+                        <span class="reserved">BEGIN</span><br>
                         SELECT<br>
                         name, salary<br>
                         INTO<br>
@@ -235,7 +268,8 @@
                         id = 3;<br>
 
                         DBMS_OUTPUT.PUT_LINE(emp_name || ':' || emp_salary );<br><br>
-                        END;</p>
+                        <span class="reserved">END</span>;
+                    </p>
                 </div>
 
                 <ul>
@@ -265,19 +299,20 @@
                 <h4>Syntax</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>constant_name CONSTANT datatype [NOT NULL] := expression;</p>
+                    <p>constant_name <span class="reserved">constant</span> datatype [NOT NULL] := expression;</p>
                 </div>
                 <h4>Example</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>DECLARE <br><br>
-                        co_pi CONSTANT REAL := 3.14159;<br>
+                    <p><span class="reserved">DECLARE</span> <br><br>
+                        co_pi <span class="reserved">CONSTANT</span> REAL := 3.14159;<br>
                         co_radius CONSTANT REAL := 10;<br>
                         co_area CONSTANT REAL := (co_pi * co_radius**2);<br>
 
-                        BEGIN<br>
+                        <span class="reserved">BEGIN</span><br>
                         DBMS_OUTPUT.PUT_LINE(co_area);<br><br>
-                        END;</p>
+                        <span class="reserved">END</span>;
+                    </p>
                 </div>
                 <h4>Output</h4>
                 <div class="output">
@@ -300,12 +335,13 @@
                 <h4>Example</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>declare<br><br>
+                    <p><span class="reserved">DECLARE</span><br><br>
                         Y number:= 5 + 2 * 3;<br>
 
-                        begin<br>
+                        <span class="reserved">BEGIN</span><br>
                         DBMS_OUTPUT.PUT_LINE(Y);<br><br>
-                        END;</p>
+                        <span class="reserved">END</span>;
+                    </p>
                 </div>
                 <h4>Output</h4>
                 <div class="output">
@@ -394,29 +430,31 @@
                 <h4>Syntax</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>LOOP<br>
+                    <p><span class="reserved">LOOP</span><br>
 
                         Loop statements<br>
 
                         Conditional exit using EXIT|EXIT WHEN<br>
 
-                        END LOOP;</p>
+                        <span class="reserved">END LOOP</span>;
+                    </p>
                 </div>
 
                 <h4>Example</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>DECLARE<br><br>
+                    <p><span class="reserved">DECLARE</span><br><br>
                         num NUMBER:=1;<br>
-                        BEGIN<br>
-                        LOOP<br>
+                        <span class="reserved">BEGIN</span><br>
+                        <span class="reserved">LOOP</span><br>
                         DBMS_OUTPUT.PUT_LINE('Number = '||num);<br>
                         num:=num+1;<br>
                         IF num>3 THEN<br>
                         EXIT;<br>
                         END IF; <br>
-                        END LOOP;<br><br>
-                        END;</p>
+                        <span class="reserved">END LOOP</span>;<br><br>
+                        <span class="reserved">END</span>;
+                    </p>
                 </div>
 
                 <h4>Output</h4>
@@ -449,26 +487,28 @@
                 <h4>Syntax</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>WHILE condition expression LOOP<br>
+                    <p><span class="reserved">WHILE</span> condition expression LOOP<br>
 
                         Loop statements<br>
 
                         [CONTINUE| EXIT|EXIT WHEN with condition]<br>
 
-                        END LOOP;</p>
+                        <span class="reserved">END LOOP</span>;
+                    </p>
                 </div>
 
                 <h4>Example</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>DECLARE<br>
+                    <p><span class="reserved">DECLARE</span><br>
                         num NUMBER:=1;<br>
-                        BEGIN<br>
-                        WHILE num<=3 LOOP<br>
+                        <span class="reserved">BEGIN</span><br>
+                        <span class="reserved">WHILE</span> num<=3 LOOP<br>
                             DBMS_OUTPUT.PUT_LINE('Number = '||num);<br>
                             num:=num+1;<br>
-                            END LOOP;<br>
-                            END;</p>
+                            <span class="reserved">END LOOP</span>;<br>
+                            <span class="reserved">END</span>;
+                    </p>
                 </div>
 
                 <h4>Output</h4>
@@ -499,26 +539,29 @@
                 <h4>Syntax</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>FOR counter-variable IN Lower Bound.. Upper Bound LOOP<br>
+                    <p><span class="reserved">FOR</span> counter-variable <span class="reserved">IN</span> Lower Bound..
+                        Upper Bound LOOP<br>
 
                         Loop statements<br>
 
                         [CONTINUE| EXIT|EXIT WHEN with condition]<br>
 
-                        END LOOP;</p>
+                        <span class="reserved">END LOOP</span>;
+                    </p>
                 </div>
 
                 <h4>Example</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>DECLARE<br>
+                    <p><span class="reserved">DECLARE</span><br>
                         num NUMBER :=1;<br>
-                        BEGIN<br><br>
+                        <span class="reserved">BEGIN</span><br><br>
 
-                        FOR i IN num .. 3 LOOP<br>
+                        <span class="reserved">FOR</span> i IN num .. 3 LOOP<br>
                         DBMS_OUTPUT.PUT_LINE ('Number = '||i);<br>
-                        END LOOP;<br><br>
-                        END;</p>
+                        <span class="reserved">END LOOP</span>;<br><br>
+                        <span class="reserved">END</span>;
+                    </p>
                 </div>
 
                 <h4>Output</h4>
@@ -547,7 +590,8 @@
             <div class="one" id="cursor">
                 <h2>CURSOR</h2>
                 <hr>
-                <p>A cursor is a pointer to this context area. PL/SQL controls the context area through a cursor. A
+                <p>A cursor is a <B>POINTER</B> to this context area. PL/SQL controls the context area through a cursor.
+                    A
                     cursor holds the rows (one or more) returned by a SQL statement. The set of rows the cursor holds is
                     referred to as the active set.<br><br>
 
@@ -556,7 +600,7 @@
                 <ul>
                     <li>Implicit cursor</li>
                     <li>Explicit cursor</li>
-                </ul>
+                </ul><BR>
 
                 <h4>Implicit cursor</h4>
                 <p>Implicit cursors are automatically created by Oracle whenever an SQL statement is executed, when
@@ -637,22 +681,23 @@
                 <h4>Example</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>DECLARE<br>  
+                    <p><span class="reserved">DECLARE</span><br>
                         total_rows number(2);<br>
-                     BEGIN <br>
-                        UPDATE employee<br> 
-                        SET salary = salary + 1000;<br> 
+                        <span class="reserved">BEGIN</span> <br>
+                        UPDATE employee<br>
+                        SET salary = salary + 1000;<br>
                         IF sql%notfound THEN<br>
-                           dbms_output.put_line('employee not found');<br> 
+                        dbms_output.put_line('employee not found');<br>
                         ELSIF sql%found THEN<br>
-                           total_rows := sql%rowcount;<br>
-                           dbms_output.put_line( total_rows || ' updated ');<br> 
-                        END IF;<br>  
-                     END;</p>
+                        total_rows := sql%rowcount;<br>
+                        dbms_output.put_line( total_rows || ' updated ');<br>
+                        END IF;<br>
+                        <span class="reserved">END</span>;
+                    </p>
                 </div>
                 <p>When the above code is executed at the SQL prompt, it produces the following result −</p>
                 <div class="output">
-                    <p>3 customers selected<br>  
+                    <p>3 employee selected<br>
 
                         PL/SQL procedure successfully completed.</p>
                 </div>
@@ -693,12 +738,15 @@
                 </div>
 
 
-                <h2>Explicit cursor</h2><hr>
-                <p>Explicit cursors are programmer-defined cursors for gaining more control over the context area. An explicit cursor should be defined in the declaration section of the PL/SQL Block. It is created on a SELECT Statement which returns more than one row.</p>
+                <h2>Explicit cursor</h2>
+                <hr>
+                <p>Explicit cursors are programmer-defined cursors for gaining more control over the context area. An
+                    explicit cursor should be defined in the declaration section of the PL/SQL Block. It is created on a
+                    SELECT Statement which returns more than one row.</p>
                 <h4>Syntax for creating an explicit cursor :</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>CURSOR cursor_name IS select_statement;</p>
+                    <p><span class="reserved">CURSOR</span> cursor_name IS select_statement;</p>
                 </div>
 
                 <h4>Working with an explicit cursor includes the following steps : </h4>
@@ -714,16 +762,17 @@
                 <h4>Example</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>CURSOR emp_employee IS <br>
+                    <p><span class="reserved">CURSOR</span> emp_employee IS <br>
                         SELECT id, name, salary FROM employee; </p>
                 </div>
 
                 <h4>Opening the Cursor</h4>
-                <p>Opening the cursor allocates the memory for the cursor and makes it ready for fetching the rows returned by the SQL statement into it.</p>
+                <p>Opening the cursor allocates the memory for the cursor and makes it ready for fetching the rows
+                    returned by the SQL statement into it.</p>
                 <h4>Example</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>CURSOR emp_employee IS <br>
+                    <p><span class="reserved">CURSOR</span> emp_employee IS <br>
                         SELECT id, name, salary FROM employee; </p>
                 </div>
 
@@ -741,145 +790,272 @@
                 <h4>Example</h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>CLOSE emp_employee;</p>
+                    <p><span class="reserved">CLOSE</span> emp_employee;</p>
                 </div>
 
-                <h4>Complete example  of Explicit Cursor </h4>
+                <h4>Complete example of Explicit Cursor </h4>
                 <div class="code">
                     <button class="btns">Copy</button>
-                    <p>DECLARE <br>
+                    <p><span class="reserved">DECLARE</span> <br>
                         emp_id employee.id%type; <br>
                         emp_name employee.name%type; <br>
                         emp_salary employee.salary%type; <br>
-                        CURSOR emp_employee is<br> 
-                           SELECT id, name, salary FROM employee; <br><br>
-                     BEGIN<br> 
-                        OPEN emp_employee; <br>
-                        LOOP <br>
-                        FETCH emp_employee into emp_id, emp_name, emp_salary;<br> 
-                           EXIT WHEN emp_employee%notfound;<br> 
-                           dbms_output.put_line(emp_id || ' ' || emp_name || ' ' || emp_salary);<br> 
-                        END LOOP; <br>
-                        CLOSE emp_employee;<br><br> 
-                     END;</p>
+                        <span class="reserved">CURSOR</span> emp_employee is<br>
+                        SELECT id, name, salary FROM employee; <br><br>
+                        <span class="reserved">BEGIN</span><br>
+                        <span class="reserved">OPEN</span> emp_employee; <br>
+                        <span class="reserved">LOOP</span> <br>
+                        <span class="reserved">FETCH</span> emp_employee into emp_id, emp_name, emp_salary;<br>
+                        EXIT WHEN emp_employee%notfound;<br>
+                        dbms_output.put_line(emp_id || ' ' || emp_name || ' ' || emp_salary);<br>
+                        <span class="reserved">END LOOP</span>; <br>
+                        <span class="reserved">CLOSE</span> emp_employee;<br><br>
+                        <span class="reserved">END</span>;
+                    </p>
                 </div>
 
                 <h4>Output</h4>
                 <div class="output">
-                    <p>1	Rohit	5000<br>
-                        2	Gill	4000<br>
-                        3	Kumar	9000</p><br>
+                    <p>1 Rohit 5000<br>
+                        2 Gill 4000<br>
+                        3 Kumar 9000</p><br>
                 </div>
 
             </div>
 
             <div class="one" id="exception">
-                <h2>Exception</h2><hr>
-                <p>Exceptions in PL/SQL. An exception is an error condition during a program execution. PL/SQL supports programmers to catch such conditions using EXCEPTION block in the program and an appropriate action is taken against the error condition.
-                    <br><br> There are two types of exceptions : </p>
-                    <ul>
-                        <li>system-defined exceptions</li>
-                        <li>user-defined exceptions</li>
-                    </ul>
+                <h2>Exception</h2>
+                <hr>
+                <p>Exceptions in PL/SQL. An exception is an error condition during a program execution. PL/SQL supports
+                    programmers to catch such conditions using EXCEPTION block in the program and an appropriate action
+                    is taken against the error condition.
+                    <br><br> There are two types of exceptions :
+                </p>
+                <ul>
+                    <li>system-defined exceptions</li>
+                    <li>user-defined exceptions</li>
+                </ul>
 
-                    <h4>Syntax</h4>
-                    <div class="code">
-                        <button class="btns">Copy</button>
-                        <p>DECLARE<br>
-                            declarations section<br>
-                         BEGIN <br>
-                            executable command(s)<br><br> 
-                         EXCEPTION <br>
-                            exception handling goes here<br> 
-                            WHEN exception1 THEN<br> 
-                               exception1-handling-statements<br>  
-                            WHEN exception2  THEN<br>  
-                               exception2-handling-statements<br>  
-                            ........ <br>
-                            WHEN others THEN<br> 
-                               exception3-handling-statements<br><br>
-                         END;</p>
-                    </div>
+                <h4>Syntax</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p><span class="reserved">DECLARE</span><br>
+                        declarations section<br>
+                        <span class="reserved">BEGIN</span> <br>
+                        executable command(s)<br><br>
+                        <span class="reserved">EXCEPTION</span> <br>
+                        exception handling goes here<br>
+                        WHEN exception1 THEN<br>
+                        exception1-handling-statements<br>
+                        WHEN exception2 THEN<br>
+                        exception2-handling-statements<br>
+                        ........ <br>
+                        WHEN others THEN<br>
+                        exception3-handling-statements<br><br>
+                        <span class="reserved">END</span>;
+                    </p>
+                </div>
 
-                    <h4>Example</h4>
-                    <div class="code">
-                        <button class="btns">Copy</button>
-                        <p>DECLARE<br> 
-                            emp_id employee.id%type;<br> 
-                            emp_name employee.name%type :='Sammy';<br> 
-                            emp_salary employee.salary%type;<br><br> 
-                         BEGIN <br>
-                            SELECT  name, salary INTO  emp_name, emp_salary<br> 
-                            FROM employee <br>
-                            WHERE id = emp_id;  <br>
-                            DBMS_OUTPUT.PUT_LINE ('Name: '||  emp_name);<br> 
-                            DBMS_OUTPUT.PUT_LINE ('salary: ' || emp_salary); <br><br>
-                         
-                         EXCEPTION <br>
-                            WHEN no_data_found THEN<br> 
-                               dbms_output.put_line('employee not found');<br> 
-                            WHEN others THEN <br>
-                               dbms_output.put_line('Error!');<br><br> 
-                         END;</p>
-                    </div>
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p><span class="reserved">DECLARE</span><br>
+                        emp_id employee.id%type;<br>
+                        emp_name employee.name%type :='Sammy';<br>
+                        emp_salary employee.salary%type;<br><br>
+                        <span class="reserved">BEGIN</span> <br>
+                        SELECT name, salary INTO emp_name, emp_salary<br>
+                        FROM employee <br>
+                        WHERE id = emp_id; <br>
+                        DBMS_OUTPUT.PUT_LINE ('Name: '|| emp_name);<br>
+                        DBMS_OUTPUT.PUT_LINE ('salary: ' || emp_salary); <br><br>
 
-                    <h4>Output</h4>
-                    <div class="output">
-                        <p>employee not found <br> 
+                        <span class="reserved">EXCEPTION</span> <br>
+                        WHEN no_data_found THEN<br>
+                        dbms_output.put_line('employee not found');<br>
+                        WHEN others THEN <br>
+                        dbms_output.put_line('Error!');<br><br>
+                        <span class="reserved">END</span>;
+                    </p>
+                </div>
 
-                            PL/SQL procedure successfully completed.</p>
-                    </div>
+                <h4>Output</h4>
+                <div class="output">
+                    <p>employee not found <br>
 
-                    <h2>User-defined Exceptions</h2><hr>
-                    <p>PL/SQL allows you to define your own exceptions according to the need of your program. A user-defined exception must be declared and then raised explicitly, using either a RAISE statement or the procedure DBMS_STANDARD.RAISE_APPLICATION_ERROR.</p>
-                    <h4>Syntax</h4>
-                    <div class="code">
-                        <button class="btns">Copy</button>
-                        <p>DECLARE <br>
-                            exception_name EXCEPTION;</p>
-                    </div>
-                    <h4>Example</h4>
-                    <div class="code">
-                        <button class="btns">Copy</button>
-                        <p>DECLARE 
-                            emp_id customers.id%type := &cemp_id;<br> 
-                            emp_name customerS.Name%type; <br>
-                            emp_salary customers.salary%type;  <br>
-                            -- user defined exception <br>
-                            ex_invalid_id  EXCEPTION; <br><br>
-                         BEGIN <br>
-                            IF emp_id <= 0 THEN <br>
-                               RAISE ex_invalid_id; <br>
+                        PL/SQL procedure successfully completed.</p>
+                </div>
+
+                <h2>User-defined Exceptions</h2>
+                <hr>
+                <p>PL/SQL allows you to define your own exceptions according to the need of your program. A user-defined
+                    exception must be declared and then raised explicitly, using either a RAISE statement or the
+                    procedure DBMS_STANDARD.RAISE_APPLICATION_ERROR.</p>
+                <h4>Syntax</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p><span class="reserved">DECLARE</span> <br>
+                        exception_name <span class="reserved">EXCEPTION</span>;</p>
+                </div>
+                <h4>Example</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p><span class="reserved">DECLARE</span>
+                        emp_id customers.id%type := &cemp_id;<br>
+                        emp_name customerS.Name%type; <br>
+                        emp_salary customers.salary%type; <br>
+                        -- user defined exception <br>
+                        ex_invalid_id <span class="reserved">EXCEPTION</span>; <br><br>
+                        <span class="reserved">BEGIN</span> <br>
+                        IF emp_id <= 0 THEN <br>
+                            RAISE ex_invalid_id; <br>
                             ELSE <br>
-                               SELECT  name, salary INTO  emp_name, emp_salary <br>
-                               FROM customers <br>
-                               WHERE id = emp_id;<br>
-                               DBMS_OUTPUT.PUT_LINE ('Name: '||  emp_name); <br> 
-                               DBMS_OUTPUT.PUT_LINE ('salary: ' || emp_salary); <br>
+                            SELECT name, salary INTO emp_name, emp_salary <br>
+                            FROM customers <br>
+                            WHERE id = emp_id;<br>
+                            DBMS_OUTPUT.PUT_LINE ('Name: '|| emp_name); <br>
+                            DBMS_OUTPUT.PUT_LINE ('salary: ' || emp_salary); <br>
                             END IF; <br><br>
-                         
-                         EXCEPTION <br>
+
+                            <span class="reserved">EXCEPTION</span> <br>
                             WHEN ex_invalid_id THEN <br>
-                               dbms_output.put_line('id must be greater than zero!');<br> 
+                            dbms_output.put_line('id must be greater than zero!');<br>
                             WHEN no_data_found THEN <br>
-                               dbms_output.put_line('employee not found'); <br>
+                            dbms_output.put_line('employee not found'); <br>
                             WHEN others THEN <br>
-                               dbms_output.put_line('Error!'); <br> <br>
-                         END;</p>
-                    </div>
+                            dbms_output.put_line('Error!'); <br> <br>
+                            <span class="reserved">END</span>;
+                    </p>
+                </div>
 
-                    <h4>Output</h4>
-                    <div class="output">
-                        <p>Enter value for cemp_id: -6 (let's enter a value -6) <br>
-                            old  2: emp_id customers.id%type := &cemp_id; <br>
-                            new  2: emp_id customers.id%type := -6; <br>
-                            id must be greater than zero! <br><br>
-                             
-                            PL/SQL procedure successfully completed.</p>
-                    </div>
+                <h4>Output</h4>
+                <div class="output">
+                    <p>Enter value for cemp_id: -6 (let's enter a value -6) <br>
+                        old 2: emp_id customers.id%type := &cemp_id; <br>
+                        new 2: emp_id customers.id%type := -6; <br>
+                        id must be greater than zero! <br><br>
+
+                        PL/SQL procedure successfully completed.</p>
+                </div>
 
 
 
+            </div>
+
+
+            <div class="one" id="triggers">
+                <h2>Triggers</h2>
+                <hr>
+                <p>Triggers are stored programs, which are automatically executed or fired when some events occur.<br>
+                    Triggers are, in fact, written to be executed in response to any of the following events : </p>
+                <ul>
+                    <li><b>database manipulation (DML)</b> statement (DELETE, INSERT, or UPDATE)</li>
+                    <li><b>database definition (DDL)</b> statement (CREATE, ALTER, or DROP).</li>
+                    <li><b>database operation</b> (SERVERERROR, LOGON, LOGOFF, STARTUP, or SHUTDOWN).</li>
+                </ul>
+                <p>Triggers can be defined on the table, view, schema, or database with which the event is associated.
+                </p>
+
+                <h4>Benefits of Triggers</h4>
+                <ul>
+                    <li>Generating some derived column values automatically</li>
+                    <li>Enforcing referential integrity</li>
+                    <li>Event logging and storing information on table access</li>
+                    <li>Synchronous replication of tables</li>
+                    <li>Imposing security authorizations</li>
+                    <li>Preventing invalid transactions</li>
+                </ul>
+
+                <h4>Syntax</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p><span class="reserved">CREATE</span> [OR REPLACE ] <span class="reserved">TRIGGER</span>
+                        trigger_name <br>
+                        {BEFORE | AFTER | INSTEAD OF } <br>
+                        {INSERT [OR] | UPDATE [OR] | DELETE}<br>
+                        [OF col_name] <br>
+                        ON table_name <br>
+                        [REFERENCING OLD AS o NEW AS n] <br>
+                        [FOR EACH ROW] <br>
+                        WHEN (condition) <br>
+                        <span class="reserved">DECLARE</span> <br>
+                        Declaration-statements <br>
+                        <span class="reserved">BEGIN</span> <br>
+                        Executable-statements <br>
+                        <span class="reserved">EXCEPTION</span> <br>
+                        Exception-handling-statements <br>
+                        <span class="reserved">END</span>;
+                    </p>
+                </div>
+
+                <h4>Employee table</h4>
+                <div class="output">
+                    <table>
+                        <tr>
+                            <th>id</th>
+                            <th>name</th>
+                            <th>salary</th>
+                        </tr>
+
+                        <tr>
+                            <th>1</th>
+                            <th>Rohit</th>
+                            <th>5000</th>
+                        </tr>
+
+
+                        <tr>
+                            <th>2</th>
+                            <th>Gill</th>
+                            <th>4000</th>
+                        </tr>
+
+                        <tr>
+                            <th>3</th>
+                            <th>Kumar</th>
+                            <th>9000</th>
+                        </tr>
+
+
+                    </table>
+                </div>
+
+                <h4>Example of creating triggers</h4>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p><span class="reserved">CREATE</span> OR REPLACE <span class="reserved">TRIGGER</span>
+                        display_salary_changes<br>
+                        BEFORE DELETE OR INSERT OR UPDATE ON employee <br>
+                        FOR EACH ROW <br>
+                        WHEN (NEW.ID > 0)<br>
+                        <span class="reserved">DECLARE</span> <br>
+                        sal_diff number; <br>
+                        <span class="reserved">BEGIN</span> <br>
+                        sal_diff := :NEW.salary - :OLD.salary; <br>
+                        dbms_output.put_line('Old salary: ' || :OLD.salary); <br>
+                        dbms_output.put_line('New salary: ' || :NEW.salary); <br>
+                        dbms_output.put_line('Salary difference: ' || sal_diff); <br>
+                        <span class="reserved">END</span>;
+                    </p>
+                </div>
+
+                <h4>Triggering Triggers</h4>
+                <p>Let us perform some DML operations on the employee table. Here is one update statement, which will
+                    update a record in the table</p><br>
+                <div class="code">
+                    <button class="btns">Copy</button>
+                    <p><span class="reserved">UPDATE</span> employee <br>
+                        SET salary = salary + 1000<br>
+                        WHERE id = 1; </p>
+                </div>
+                <p>When a record is updated in the employee table, the above create trigger, display_salary_changes will
+                    be fired and it will display the following result −</p>
+                <h4>Output</h4>
+                <div class="output">
+                    <p>Old salary: 5000 <br>
+                        New salary: 6000 <br>
+                        Salary difference: 1000</p>
+                </div>
             </div>
 
         </div>
