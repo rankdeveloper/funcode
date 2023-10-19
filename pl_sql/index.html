@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PL/SQL-tutorial</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./side-bar_content.css">
+
+    <!-- getting css from sql_tutorial  -->
+    <link rel="stylesheet" href="../sql_tutorial/style.css">
+    <link rel="stylesheet" href="../sql_tutorial/side-bar_content.css">
     <title>FUNCODE - PL/SQL</title>
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <style>
@@ -15,52 +17,49 @@
             color: black;
         }
     </style>
+
+   
 </head>
 
 <body>
     <div class="main">
         <div class="sidebar">
             <div class="flex">
-
+           
                 <h1>PL/SQL</h1>
-
-
-                <h5><a href="../index.html">GO HOME</a></h5>
-            </div>
+ 
+           
+             <h5><a href="../index.html">Go home</a></h5>
+         </div>
             <div class="searchbar">
                 <input type="text" onkeyup="search()" id="search" placeholder="Type to search...">
             </div>
 
             <div class="topics">
                 <ul id="topic">
-                    <li><a href="#intro" class="item">Introduction</a></li>
-                    <li><a href="#advantages" class="item">advantages of plsql</a></li>
-                    <li><a href="#blocks" class="item">block structure</a></li>
-                    <li><a href="#data_types" class="item">data types</a></li>
-                    <li><a href="#variable" class="item">declaring variables</a></li>
-                    <li><a href="#constant" class="item">constant</a></li>
-                    <li><a href="#operator_precedence" class="item">operator precedence</a></li>
-                    <li><a href="#iterative_control" class="item">conditional and iterative_control</a></li>
-                    <li><a href="#cursor" class="item">cursor</a></li>
-                    <li><a href="#exception" class="item">exception handling</a></li>
-
-                    <li><a href="#triggers" class="item">triggers</a></li>
-
-
+                    <li><a id="intro" class="item active">Introduction</a></li>
+                    <li><a id="advantages" class="item">advantages of plsql</a></li>
+                    <li><a id="blocks" class="item">block structure</a></li>
+                    <li><a id="data_types" class="item">data types</a></li>
+                    <li><a id="variable" class="item">declaring variables</a></li>
+                    <li><a id="constant" class="item">constant</a></li>
+                    <li><a id="operator_precedence" class="item">operator precedence</a></li>
+                    <li><a id="iterative_control" class="item">conditional and iterative_control</a></li>
+                    <li><a id="cursor" class="item">cursor</a></li>
+                    <li><a id="exception" class="item">exception handling</a></li>
+                    <li><a id="triggers" class="item">triggers</a></li>
                 </ul>
-
             </div>
-
-
-
         </div>
 
         <div class="main-content">
             <!-- <a href="#bottom">Bottom</a> -->
             <!--   introduction to sql -->
-            <div class="one">
-                <h2 id="intro">Introduction to pl/sql</h2>
+            <div class="one"  id="intro">
+                <h2>Introduction to pl/sql</h2>
                 <hr>
+
+                <img src="../images/pl_sql.jpg" style="width: 600px; " />
                 <p>PL/SQL is a <b>procedural language</b> designed specifically to embrace SQL statements within its
                     syntax.
                     PL/SQL program units are compiled by the Oracle Database server and stored inside the database. And
@@ -75,7 +74,7 @@
             <!--   end introduction to sql -->
 
             <!--   what sql can do -->
-            <div class="one" id="advantage">
+            <div class="one" id="advantages">
                 <h2>advantages of plsql</h2>
                 <hr>
 
@@ -146,7 +145,6 @@
             </div>
             <!--   end blocks -->
             <br><br>
-
 
             <div class="one" id="data_types">
                 <h2>Data types</h2>
@@ -1063,53 +1061,7 @@
 
     </div>
 
-    <script>
-        const btns = document.querySelectorAll('.btns')
-        btns.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                const txt = btn.nextElementSibling.innerText;
-                btn.innerHTML = "Copied";
-                setTimeout(() => {
-                    btn.innerHTML = "Copy";
-                }, 2000)
-                copyToClipboard(txt)
-            })
-        })
-
-        function copyToClipboard(txt) {
-            navigator.clipboard.writeText(txt)
-                .then(() => console.log(`${txt} was copied...`))
-                .catch((e) => console.log('Copy failed ${e}'))
-        }
-
-
-
-        function search() {
-            var input, filter, ul, li, a, i;
-            input = document.getElementById("search");
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("topic");
-            li = ul.getElementsByTagName("li");
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("a")[0];
-                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
-        }
-
-        var topics = document.getElementById("topics");
-        var btn = topics.getElementsByClassName("item");
-        for (var i = 0; i < btn.length; i++) {
-            btn[i].addEventListener("click", function () {
-                var current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(" active", "");
-                this.className += " active";
-            });
-        }
-    </script>
+<script src="./script.js"></script>
 
 
 </body>
