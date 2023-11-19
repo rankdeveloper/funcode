@@ -39,7 +39,7 @@ header {
   background-color: #36B393;
   /* background-color:#1DE9B6; */
   /* background-color: #2b3a42 ; */
-  height: 50px;
+  /* height: 50px; */
   color: white;
   display: flex;
   justify-content: space-between;
@@ -256,56 +256,6 @@ ul li:hover {
 /* search bar end */
 
 /* info part */
-.info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.info .info-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* background-color: grey; */
-  flex-direction: row;
-}
-
-
-
-.info-inner .img {
-  height: 40%;
-  flex: 1;
-}
-
-.info-inner .text {
-  flex: 1;
-  /* background-color: red; */
-  text-align: center;
-  padding: 0 10px;
-}
-
-.text h2 {
-  margin-top: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-transform: uppercase;
-  margin-bottom: 35px;
-  line-height: 44px;
-  font-size: 40px;
-  font-weight: 500;
-  color: #36B393;
-}
-
-.text p {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 30px;
-  font-size: 20px;
-  font-weight: 450;
-  margin-bottom: 20px;
-  color: #36B393;
-
-}
 
 .mobile-menu li {
   margin-bottom: 10px;
@@ -452,8 +402,8 @@ ul li:hover {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-transform: uppercase;
   margin-bottom: 35px;
-  line-height: 44px;
-  font-size: 40px;
+  line-height: 3rem;
+  font-size: 3rem;
   font-weight: 500;
   color: #36B393;
 }
@@ -588,6 +538,20 @@ ul li:hover {
   justify-content: center;
   align-items: center;
   padding: 40px 0;
+  flex-direction: column;
+}
+
+.courses>h1 {
+  color: #2d3846;
+  font-size: 2rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.courses>h1 span {
+  color: #36B393;
+  background-color: white;
+  padding: 0 5px;
 }
 
 .courses-inner {
@@ -803,6 +767,11 @@ ul li:hover {
 
 
 @media only screen and (max-width:600px) {
+
+  header {
+    height: 50px;
+  }
+
   header nav {
     display: none;
   }
@@ -813,6 +782,10 @@ ul li:hover {
 
   .info .info-inner {
     display: block;
+  }
+
+  .info-inner .text h2 {
+    font-size: 40px;
   }
 
 
@@ -826,13 +799,14 @@ ul li:hover {
 
   .courses-inner {
     grid-gap: 70px;
+    /* border:1px  solid red; */
   }
 
   .course {
     display: block;
-    box-shadow: 0px -5px 18px 5px rgba(0, 0, 0, 0.22);
+    /* box-shadow: 0px -5px 18px 5px rgba(0, 0, 0, 0.22);
     -webkit-box-shadow: 0px -5px 18px 5px rgba(0, 0, 0, 0.22);
-    -moz-box-shadow: 0px -5px 18px 5px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px -5px 18px 5px rgba(0, 0, 0, 0.22); */
   }
 
   .course-img {

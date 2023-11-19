@@ -1,17 +1,13 @@
 * {
     padding: 0;
     margin: 0;
-
 }
 
 .main {
     display: flex;
     flex-direction: row;
-    /* justify-content: space-between; */
-
     color: white;
     gap: 10rem;
-    /* padding:2rem; */
 }
 
 .sidebar {
@@ -21,28 +17,25 @@
     z-index: 1;
     top: 0;
     left: 0;
-    /* background-color: #111; */
-    background-color: #dddddd;;
+    background-color: #dddddd;
     overflow:scroll;
     padding: 20px 10px;
 }
 
 .flex {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     margin-bottom:2rem;
     justify-content: space-between;
-    width: 100%;
-    height: auto;
 }
 .flex h1{
-    font-size: 3rem;
+    font-size: 2.3rem;
     color: #2c3e50;
 }
 .flex h5 a{
     text-transform: uppercase;
     color: #2c3e50;
-    text-decoration: none;
+    cursor: pointer;
 }
 
 .searchbar{
@@ -53,20 +46,15 @@ margin-top:5rem;
     font-size:1rem;
     padding:5px;
     width: 100%;
-    /* border-radius:5px; */
     outline: none;
     border: none;
 }
 
-
-
 .topics{
     margin-top: 2rem;
-   
 }
 .topics ul{
     list-style: none;
-/* background-color: blue; */
 }
 .topics ul li {
     background-color:white;
@@ -79,12 +67,20 @@ margin-top:5rem;
     text-decoration: none;
     /* font-size: 25px; */
     color: #818181;
+    cursor: pointer;
    
     display: block;
   }
 
   .topics ul li a:hover{
-    background-color:#ffa500;
+    background-color:#2c3e50;
+    color:white;
+    transition: .3s ease-out;
+  }
+
+ul li a.active{
+    background-color:#2c3e50;
+
     color:white;
   }
 
@@ -98,10 +94,10 @@ margin-top:5rem;
   } */
   
   /* Style the active class, and buttons on mouse-over */
-  .active, .btn:hover {
+  /* .active, .btn:hover {
     background-color: #666;
     color: white;
-  }
+  } */
 
 
 
@@ -110,6 +106,5 @@ margin-top:5rem;
     margin-left: 240px;
     line-height: 1.5rem;
     color: black;
-    /* border: 1px solid red; */
     padding: 1rem 2rem 1rem 5rem;
 }

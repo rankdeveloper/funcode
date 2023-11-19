@@ -8,6 +8,9 @@
     font-family: 'Overpass', sans-serif;
     font-family: 'Roboto', sans-serif;
 }
+.one{
+    line-height: 1.5rem;
+}
 
 .one h2 {
     line-height: 1.8rem;
@@ -32,11 +35,8 @@
 }
 
 .one ul li {
-
-    /* padding: 5px 0px 10px; */
-    /* gap:1rem; */
-    margin-left: 15px;
-
+        line-height: 1.8rem;
+        margin:1rem 0 1rem 15px;
 }
 
 .one ol li .highlight {
@@ -66,6 +66,7 @@
     color: white;
     font-family: arial;
     border-radius: 5px;
+    width: 100vh;
 }
 
 .code h2,
@@ -116,10 +117,8 @@
     margin-bottom: 5px;
     word-spacing: 5px;
     color: black;
-
     line-height: 1.5rem;
     padding: 10px;
-
     font-family: arial;
     border-radius: 5px;
 }
