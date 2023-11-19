@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../sql_tutorial/style.css">
+  <link rel="stylesheet" href="../sql_tutorial/side-bar_content.css">
+  <title>FUNCODE - JAVA</title>
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+
+  <style>
+    code {
+      display: flex;
+      word-wrap: normal;
+      white-space: pre;
+      font-family: monospace;
+      overflow-x: auto;
+      max-width: 600px;
+      position: relative;
+      padding: 30px 20px;
+
+
+    }
+
+    code::-webkit-scrollbar,
+    .sidebar::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    code::-webkit-scrollbar-track,
+    .sidebar::-webkit-scrollbar-track {
+      background-color: #e4e4e4;
+      border-radius: 100px;
+    }
+
+    code::-webkit-scrollbar-thumb,
+    .sidebar::-webkit-scrollbar-thumb {
+      border-radius: 100px;
+      background-color: #334454;
+      /* box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5); */
+    }
+
+    .searchbar input {
+      width: 95%;
+    }
+
+    details {
+      border-radius: 3px;
+      background: #EEE;
+      margin: 1em 0;
+      /* border:1px solid red; */
+    }
+
+    summary {
+      /* background: #333; */
+      color:
+        #334454;
+      border-radius: 3px;
+      padding: 5px 10px;
+      outline: none;
+      transition: .5s ease;
+      font-weight: 400;
+      /* border:1px solid cyan; */
+    }
+
+    .topics ul li a {
+      font-size: 13px;
+      line-height: normal;
+    }
+
+    /* .one h2 {
+    text-transform: uppercase;
+    color: #2c3e50;
+    font-size: 25px;
+    line-height: normal;
+} */
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="sidebar">
+      <div class="flex">
+
+        <h1>JAVA</h1>
+
+
+        <h5><a href="../index.html">Go home</a></h5>
+      </div>
+      <div class="searchbar">
+        <input type="text" onkeyup="search()" id="search" placeholder="Type to search...">
+      </div>
+
+      <div class="topics">
+        <div id="container"></div>
+
+      </div>
+
+
+
+    </div>
+
+    <div class="main-content">
+
+    </div>
+
+
+  </div>
+
+
+  <!-- same as pl_sql script -->
+  <script src="./script.js" type="module">
+  </script>
+  <script src="../pl_sql/script.js"></script>
+
+  <script>
+    function search() {
+      console.log("searchbar...")
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("search");
+      var summaries = document.getElementsByTagName("summary");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("topic");
+
+      for (i = 0; i < summaries.length; i++) {
+        var summaryContent = summaries[i].innerText || summaries[i].textContent;
+
+        if (summaryContent.toUpperCase().indexOf(filter) > -1) {
+          summaries[i].style.display = "";
+          summaries[i].parentElement.style.display = ""
+        } else {
+          summaries[i].style.display = "none";
+          summaries[i].parentElement.style.display = "none"
+        }
+      }
+    }
+  </script>
+
+
+
+</body>
+
+</html>
