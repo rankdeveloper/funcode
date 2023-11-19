@@ -27,42 +27,42 @@ const detailsMap = {};
 arr1.forEach(pro => {
     const type = pro.type;
 
-    const basic_pro=(pro.type=="basic")?139:''
-    const count_exceptionH_pro=(pro.type=="exception Handling")?13:''
-    const count_delegationE_pro=(pro.type=="delegationEventModel")?20:''
+    const basic_pro = (pro.type == "basic") ? 139 : ''
+    const count_exceptionH_pro = (pro.type == "exception Handling") ? 13 : ''
+    const count_delegationE_pro = (pro.type == "delegationEventModel") ? 20 : ''
 
-//     array
-// 2darray
-// awt
-// dataConversion
-// string
-// inheritance
-// input_output
-// jdbc
-// oop
-// strings
-// basic
-// function
-// 2dArray
-// delegationEventModel
-// exception Handling
-   
+    //     array
+    // 2darray
+    // awt
+    // dataConversion
+    // string
+    // inheritance
+    // input_output
+    // jdbc
+    // oop
+    // strings
+    // basic
+    // function
+    // 2dArray
+    // delegationEventModel
+    // exception Handling
+
 
     // Check if the details element for the current type already exists
     if (!detailsMap[type]) {
         // If it doesn't exist, create a new details element and append it to the container
         const details = document.createElement("details");
-        
+
         details.innerHTML = `<summary>
         ${type} 
         ${count_exceptionH_pro}
         ${basic_pro}
         ${count_delegationE_pro}
-        ${pro.type=="array"?1:''} ${pro.type=="2darray"?12:''} ${pro.type=="awt"?2:''}
-        ${pro.type=="dataConversion"?1:''} ${pro.type=="strings"?4:''} ${pro.type=="inheritance"?1:''}
-        ${pro.type=="input_output"?2:''} ${pro.type=="jdbc"?2:''} ${pro.type=="oop"?2:''}
-        ${pro.type=="function"?10:''}  
-        ${pro.type=="2dArray"?10:''}
+        ${pro.type == "array" ? 1 : ''} ${pro.type == "2darray" ? 12 : ''} ${pro.type == "awt" ? 2 : ''}
+        ${pro.type == "dataConversion" ? 1 : ''} ${pro.type == "strings" ? 4 : ''} ${pro.type == "inheritance" ? 1 : ''}
+        ${pro.type == "input_output" ? 2 : ''} ${pro.type == "jdbc" ? 2 : ''} ${pro.type == "oop" ? 2 : ''}
+        ${pro.type == "function" ? 10 : ''}  
+        ${pro.type == "2dArray" ? 10 : ''}
         </summary><ul></ul>`;
         container.appendChild(details);
         detailsMap[type] = details;
@@ -93,8 +93,9 @@ arr1.map(pro => {
                 </div>
 
                 <br>
-                <button class="outputbtn">Output</button>
-                <div class="output-box" style="border:1px solid red;">
+                <button class="outputbtn" style="cursor:none;padding:5px 20px;
+                outline:none;">Output</button>
+                <div class="output-box" style="padding: 10px;margin-top: 1rem;border: 1px solid grey;">
                     
                     <div>${pro.output}</p>
                 </div>
@@ -123,25 +124,8 @@ function copyToClipboard(txt) {
 }
 
 
-function search() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("search");
-    var details = document.getElementsByTagName("details");
-    var summary = document.getElementsByTagName("summary")
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("topic");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < details.length; i++) {
-        summary = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            // li[i].style.display = "";
-            details[i].style.display=""
-        } else {
-            // li[i].style.display = "none";
-            details[i].style.display="none"
-        }
-    }
-}
+
+
 
 
 const sButton = document.querySelectorAll(".item");
