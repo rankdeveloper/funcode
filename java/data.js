@@ -1615,7 +1615,7 @@ const arr1 = [
             }
         }`,
         type: "oop",
-        output: "https://dl.dropbox.com/s/yld5hay8i5syaft/photo-1498050108023-c5249f4df085.jpeg?dl=0"
+        output: "Book added: Days in the Sun<br> Book added: Beyond a Boundary<br> Book added: The Art of Captaincy<br><br> _________________________________________<br> Books in the Library<br> Books in the collection:<br> Title: Days in the Sun, Author: Neville Cardus, ISBN: 978-0-7432-7356-5<br> Title: Beyond a Boundary, Author: CLR James, ISBN: 978-0-06-112008-4<br> Title: The Art of Captaincy, Author: Mike Brearley, ISBN: 978-0-06-112008-4<br> Book with title<br><br> Beyond a Boundary not found.<br><br> _________Current Books in the library_________<br><br> Books in the collection:<br> Title: Days in the Sun, Author: Neville Cardus, ISBN: 978-0-7432-7356-5<br> Title: Beyond a Boundary, Author: CLR James, ISBN: 978-0-06-112008-4<br> Title: The Art of Captaincy, Author: Mike Brearley, ISBN: 978-0-06-112008-4<br>"
 
 
 
@@ -1670,7 +1670,7 @@ const arr1 = [
             }
         }`,
         type: "oop",
-        output: "https://dl.dropbox.com/s/yld5hay8i5syaft/photo-1498050108023-c5249f4df085.jpeg?dl=0"
+        output: "Employee name : Jimmy <br>Salary : 150000.0<br>Hire date : 2020-03-25<br>Years of Service: 3"
 
 
 
